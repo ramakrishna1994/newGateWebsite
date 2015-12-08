@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GoodCreed</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  
+  
+  <style>
+ 
+  .margin-all
+  {
+   
+    margin-top:1%;
+  }
+  
+  .colBorder
+  {
+   border-right:1px solid;
+   border-color:black;
+   height:350px;
+  }
+  
+  .fixed
+  {
+   
+   background-color: black;
+   position:fixed;
+  }
+  </style>
+  <script>
+
+</script>
+</head>
+<body>
+		
+		
+		
+		<div class="container-fluid">
+	
+	
+		<div class="row well">
+			<div class="col-sm-4">
+				
+			</div>
+			<div class="col-sm-4 text-center margin-all">
+				<font color="purple" size="4px"><em>GOODCREED</em> </font><br>
+				<font color="orange" size="4px"><b>GATE Online Test Series</b> </font><br>
+					(Computer Science And Engineering)
+			</div>
+			<div class="col-sm-3 margin-all">
+						<div class = "btn-group" data-toggle = "buttons">
+   							<button class = "btn btn-primary" onclick="window.open('home.html','_self')"><span class="glyphicon glyphicon-home"> Home</span></button>
+      						<button class="btn btn-primary" onclick="window.open('aboutus1.html','_self')"><span class="glyphicon glyphicon-list-alt"> AboutUs</span></button>	
+						</div>
+			
+			</div>
+		</div>
+		
+		
+		
+		
+		<div class="row" >
+				<div class = "alert text-center" id="statusDivision">
+			<!-- -	<img src="images/redloader.gif">   -->	
+				</div>
+		</div>
+		
+		
+		<div class="row" id="mainDivision">
+		
+		
+		<!-- -------------login division -->
+		
+		
+			<div class="col-sm-5">
+			
+			
+			
+		<div class="form-horizontal" >
+			
+				<div class="form-group" >
+    				<label class="control-label col-sm-5"></label>
+    				<div class="col-sm-7"></div>
+  				</div>
+  				
+  				<div class="form-group" >
+    				<label class="control-label col-sm-5" ></label>
+    				<div class="col-sm-7"></div>
+  				</div>
+  				
+  				<div class="form-group" >
+    				<label class="control-label col-sm-5" ></label>
+    				<div class="col-sm-7"></div>
+  				</div>
+  				
+  				<div class="form-group" >
+    				<label class="control-label col-sm-5" ></label>
+    				<div class="col-sm-7"></div>
+  				</div>
+  				
+  				
+  				
+  				
+				<div class="form-group" id="loginEmailDivision">
+    				<label class="control-label col-sm-5" for="loginEmail"><span class = "glyphicon glyphicon-envelope"></span></label>
+    				<div class="col-sm-7">
+      					<input type="text" class="form-control" id="loginEmail" placeholder="Email address" data-toggle="popover"  data-trigger="hover" data-placement="top" data-content="" autofocus>
+      					<span class="" id="loginEmailErrorSpan"></span>
+    				</div>
+  				</div>
+  				
+  				
+  				<div class="form-group" id="loginPasswordDivision">
+    				<label class="control-label col-sm-5" for="loginPassword"><span class = "glyphicon glyphicon-lock"></span></label>
+    				<div class="col-sm-7"> 
+      					<input type="password" class="form-control" id="loginPassword" placeholder="Password" data-toggle="popover"  data-trigger="hover" data-placement="top" data-content="">
+      					<span class="" id="loginPasswordErrorSpan"></span>
+    				</div>
+    			</div>
+    
+    
+    
+  				<div class="form-group"> 
+    				<div class="control-label col-sm-offset-1 col-sm-8">
+      					<button type="submit" class="btn btn-success" onclick="return checkLoginParameters()">Login</button>
+    				</div>
+  				</div>
+  				
+  				<div class="form-group"> 
+    				<div class="control-label col-sm-offset-3 col-sm-7">
+      					<a  href="forgotpassword.html" >Forgot Password ?</a>
+    				</div>
+  				</div>
+    			
+    			
+  			</div>
+  			</div>
+  			
+  			
+  			<!-- line division----------- -->
+  			
+  			<div class="col-sm-1 colBorder">
+  			
+  			<div class="verticalLine"></div>
+  			</div>
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			
+  			<!-- ----------register division -->
+  			
+			<div class="col-sm-5">
+			
+					<div class="form-horizontal" role="form" >
+							
+				<div class="form-group" id="registrationFirstNameDivision">
+    				<label class="control-label col-sm-3" for="registrationFirstName"><span class = "glyphicon glyphicon-user"></span></label>
+    				<div class="col-sm-7">
+      					<input type="text" class="form-control" id="registrationFirstName" placeholder="Firstname" data-toggle="popover"  data-trigger="hover" data-placement="top" data-content="">
+      					<span class="" id="registrationFirstNameErrorSpan"></span>
+    				</div>
+  				</div>
+
+
+		
+				<div class="form-group" id="registrationLastNameDivision">
+    				<label class="control-label col-sm-3" for="registrationLastName"><span class = "glyphicon glyphicon-user"></span></label>
+    				<div class="col-sm-7">
+      					<input type="text" class="form-control" id="registrationLastName" placeholder="Enter Lastname" data-toggle="popover"  data-trigger="hover" data-placement="top" data-content="">
+      					<span class="" id="registrationLastNameErrorSpan"></span>
+    				</div>
+  				</div>
+  				  				
+  				
+  				<div class="form-group" id="registrationEmailDivision">
+    				<label class="control-label col-sm-3" for="registrationEmail"><span class = "glyphicon glyphicon-envelope"></span></label>
+    				<div class="col-sm-7">
+      					<input type="text" class="form-control" id="registrationEmail" placeholder="Email address" data-toggle="popover"  data-trigger="hover" data-placement="top" data-content="">
+      					<span class="" id="registrationEmailErrorSpan"></span>
+    				</div>
+  				</div>
+  				
+  				
+  				<div class="form-group" id="registrationPasswordDivision">
+    				<label class="control-label col-sm-3" for="registrationPassword"><span class = "glyphicon glyphicon-lock"></span></label>
+    				<div class="col-sm-7"> 
+      					<input type="password" class="form-control" id="registrationPassword" placeholder="Password" data-toggle="popover"  data-trigger="hover" data-placement="top" data-content="">
+      					<span class="" id="registrationPasswordErrorSpan"></span>
+    				</div>
+    			</div>
+    			
+    			
+    			<div class="form-group" id="registrationConfirmPasswordDivision">
+    				<label class="control-label col-sm-3" for="registrationConfirmPassword"><span class = "glyphicon glyphicon-lock"></span></label>
+    				<div class="col-sm-7"> 
+      					<input type="password" class="form-control" id="registrationConfirmPassword" placeholder="Confirm password" data-toggle="popover"  data-trigger="hover" data-placement="top" data-content="">
+      					<span class="" id="registrationConfirmPasswordErrorSpan"></span>
+   				 	</div>
+  				</div>
+ 
+  
+ 				 <div class="form-group" id="registrationDateOfBirthDivision">
+    				<label class="control-label col-sm-3" for="registrationDateOfBirth"><span class = "glyphicon glyphicon-calendar"></span></label>
+    				<div class="col-sm-7"> 
+      					<input type="text" class="form-control" id="registrationDateOfBirth" placeholder="Date of Birth" data-toggle="popover"  data-trigger="hover" data-placement="top" data-content="">
+      					<span class="" id="registrationDateOfBirthErrorSpan"></span>
+    				</div>
+    			</div>
+    
+    
+  				<div class="form-group"> 
+    				<div class="control-label col-sm-offset-2	 col-sm-6">
+      					<button type="submit" class="btn btn-success" onclick="return checkRegistrationParameters()">Register</button>
+    				</div>
+  				</div>
+
+ 			</div>
+			</div>
+			</div>
+			
+		</div>
+
+
+
+
+
+
+<script src="js/login.js"></script>
+</body>
+</html>
