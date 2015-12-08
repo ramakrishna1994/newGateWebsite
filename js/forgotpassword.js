@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 
 
-function resetPassword()
+function forgotPassword()
 {
 	
 	var emailid = document.getElementById("resetEmail").value;

@@ -1,6 +1,6 @@
 <?php 
 require_once 'connection.php';
-require_once '/home/ramakrishna1994/public_html/gate2016/phpmailer/PHPMailerAutoload.php';
+//require_once '/home/ramakrishna1994/public_html/gate2016/phpmailer/PHPMailerAutoload.php';
 
 
 $emailid = mysqli_real_escape_string($con,$_POST['emailid']);
