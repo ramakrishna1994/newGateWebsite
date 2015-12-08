@@ -29,7 +29,7 @@ $newfilename = $_SESSION['gateusername'] . '.' . end($temp);
 
 
 // Check file size
-if ($_FILES["image"]["size"] > 1000000) {
+if ($_FILES["image"]["size"] > 100000) {
 	//echo "Sorry, your file is too large.";
 	$uploadOk = 0;
 	$error = 2;
