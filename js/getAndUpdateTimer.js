@@ -115,12 +115,8 @@ function updateTimerToDatabase(hours,minutes,seconds)
 function endTest()
 {
 	
-	$('#ramakrishna').html('');
-	$('#mainAlertDivision').slideDown();
-	$('#manualEndTest').hide();
-	$('#automaticEndTest').hide();
-	$('#loaderAlertDivision').show();
-	 window.clearInterval(id);
+	window.clearInterval(id);
+	
 	var request = $.ajax({
         url: 'phpFiles/endTest.php',
         type: 'POST',
@@ -132,11 +128,17 @@ function endTest()
 	$.when(request).done(function(){
 		
 		
-		$('#loaderAlertDivision').hide();
-		$('#automaticEndTest').show();
-         
+		window.open("endtestpage.php","_self"); 
         	
 	});
+	
+}
+
+
+function manualEndTest()
+{
+
+		$('#endTestDialogue').modal('show');
 	
 }
 

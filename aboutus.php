@@ -32,6 +32,9 @@ require_once 'phpFiles/isSessionSet.php';
 					(Computer Science And Engineering)
 				</div>	
 			</div>	
+			<div class="col-sm-4">
+				<center><img src="../profilePictures/<?php echo $_SESSION['gateimage'] ?>" class="img-circle" width="9%" height="7%"><b><font color="blue">  <?php echo $_SESSION['gatefirstname'].' '.$_SESSION['gatelastname'] ?></font></center> 
+			</div>
 		</div>
 		<div class="row text-center margin-up">
 			<div class="btn-group">

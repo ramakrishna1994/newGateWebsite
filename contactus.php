@@ -15,7 +15,7 @@ require_once 'phpFiles/isSessionSet.php';
 	</style>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  	<script type="text/javascript" src="js/mytests.js"></script>
+  	<script type="text/javascript" src="js/contactus.js"></script>
 </head>
 
 <body>
@@ -35,6 +35,9 @@ require_once 'phpFiles/isSessionSet.php';
 					(Computer Science And Engineering)
 				</div>	
 			</div>	
+			<div class="col-sm-4">
+				<center><img src="../profilePictures/<?php echo $_SESSION['gateimage'] ?>" class="img-circle" width="9%" height="7%"><b><font color="blue">  <?php echo $_SESSION['gatefirstname'].' '.$_SESSION['gatelastname'] ?></font></center> 
+			</div>
 		</div>
 		<div class="row text-center margin-up">
 			<div class="btn-group">

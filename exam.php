@@ -44,6 +44,7 @@ require_once 'phpFiles/isSubscribed.php';
 	</style>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	  <script src="js/exam.js"></script>
 	<script src="js/getAndUpdateTimer.js"></script>
 	<script src="js/saveAndNext.js"></script>
@@ -53,9 +54,42 @@ require_once 'phpFiles/isSubscribed.php';
 </head>
 <body>
 
+
 	<div class="container-fluid well well-sm">
-		<div class="row text-center">
-			COMPILER DESIGN CHAPTER 01 TEST 01
+	
+	
+	
+	
+	<!-- Modal -->
+<div id="endTestDialogue" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        
+      </div>
+      <div class="modal-body">
+        <p><b><center>If you end the test now , you will not be able to continue it in the future.<br>Do you really want to end the test ?</center></b></p>
+      </div>
+      <div class="modal-footer text-center">
+        <button type="button" class="btn btn-success" onclick="endTest()">Yes</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+		<div class="row text-center"><b>
+		 <?php echo $_SESSION['fullNameOfSubject'];?>
+		</b>
 		</div>
 	</div>
 	
@@ -181,59 +215,8 @@ require_once 'phpFiles/isSubscribed.php';
 			</div>
 			<div class="row margin-up pallete" id="numbersDivision" style="border-bottom:1px solid;border-top:1px solid;border-color:black">
 			
-				
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
-				<button type="button" class="btn btn-default margin-up">1</button>
+			
+				<!-- -----------------will be filled dynamically -->
 				 
 				 
 				 
@@ -255,7 +238,7 @@ require_once 'phpFiles/isSubscribed.php';
 			</button>
 			<br>
 			<div class="margin-up text-center" style="border:1px solid;border-color:black;padding-bottom:3%">
-			<button type="button" class="btn btn-danger margin-up">End Test</button>
+			<button type="button" class="btn btn-danger margin-up" onclick="manualEndTest()">End Test</button>
 			</div>
 			</div>
 	</div>

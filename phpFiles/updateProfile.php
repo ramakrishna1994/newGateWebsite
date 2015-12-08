@@ -3,11 +3,7 @@ require_once 'isSessionSet.php';
 require_once 'connection.php';
 
 
-$firstname = mysqli_real_escape_string($con,$_POST['firstname']);
-$lastname = mysqli_real_escape_string($con,$_POST['lastname']);
 
-$updateQuery = "update users set lastname = '".$lastname."' where emailid = '".$_SESSION['gateusername']."';";
-mysqli_query($con,$updateQuery) or die(mysqli_error($con));
 $error = -1;
 if(isset($_FILES['image']))
 {
@@ -60,6 +56,6 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 			}
 		}
 }
-	echo '{"error":"'.$error.'"}';
+	echo '{"error":"'.$error.'","image":"'.$newfilename.'"}';
 		
 ?>

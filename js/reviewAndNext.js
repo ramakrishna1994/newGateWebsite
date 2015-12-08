@@ -50,7 +50,7 @@
 	else
 	{
 		 value=document.getElementById("numericalAnswer").value;
-		 alert("numerical");
+		// alert("numerical");
 		 if(value!="")
 			 {
 			 marked="2";

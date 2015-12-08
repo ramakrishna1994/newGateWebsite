@@ -13,13 +13,13 @@ $result = mysqli_query($con,$selectQuery) or die(mysqli_error($con));
 while($row = mysqli_fetch_array($result))
 {
 	
-	if($row['password'] != $currentpassword)
+	if($row['password'] != crypt($currentpassword,$row['password']))
 	{
 		echo '{"error":"1"}';
 	}
 	else{
-		
-		$updateQuery = "update users set password = '".$newpassword."' where emailid = '".$_SESSION['gateusername']."';";
+		$hashed_password = crypt($newpassword);
+		$updateQuery = "update users set password = '".$hashed_password."' where emailid = '".$_SESSION['gateusername']."';";
         mysqli_query($con,$updateQuery) or die(mysqli_error($con));	
         echo '{"error":"0"}';
 	}
