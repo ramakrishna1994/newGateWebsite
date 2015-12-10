@@ -204,6 +204,11 @@ function updateProfilePic()
 					 $('#statusDivision').html('<font color="red">Image Format not Supported</font>');
 			        	
 					 }
+				 else if(response.error == -1)
+				 {
+					 $('#statusDivision').html('<font color="red">Please upload an Image</font>');
+		        	
+				 }
 				 else
 					 {
 					 $('#statusDivision').html('<font color="green">Your Profile Picture has been updated Successfully !!</font>');

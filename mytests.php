@@ -12,6 +12,10 @@ require_once 'phpFiles/isSessionSet.php';
 		{
 			margin-top:0.5%;
 		}
+		.well
+		{
+			background: #000000;
+		}
 	
 	</style>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -30,10 +34,10 @@ require_once 'phpFiles/isSessionSet.php';
 					<font size="4%" color="blue"><em><strong>GOODCREED</strong></em></font>
 				</div>
 				<div class="row text-center">
-					<font size="4%"><strong>Gate Online Test Series</strong></font>
+					<font size="4%" color="black"><strong>Gate Online Test Series</strong></font>
 				</div>
 				<div class="row text-center">
-					(Computer Science And Engineering)
+					<font color="black">(Computer Science And Engineering)</font>
 				</div>	
 			</div>
 			<div class="col-sm-4">

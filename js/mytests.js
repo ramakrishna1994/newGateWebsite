@@ -25,7 +25,7 @@ $(document).ready(function(){
 				  innerhtml +='<tr>'
 					  		+'<td>'+j+'</td>'
 					  		+'<td>'+data[i][2]+'</td>'
-					  		+'<td><button type="button" class="btn btn-success btn-block" onclick="openExamWindow(\''+data[i][0]+'\')" id="'+data[i][0]+'">START TEST</button></td>'
+					  		+'<td><button type="button" class="btn btn-success btn-block btn-xs" onclick="openExamWindow(\''+data[i][0]+'\')" id="'+data[i][0]+'"><b>Start Test</b></button></td>'
 					  		+'</tr>';
 			    
 				  }
@@ -35,7 +35,7 @@ $(document).ready(function(){
 				  innerhtml +='<tr>'
 					  		+'<td>'+j+'</td>'
 					  		+'<td>'+data[i][2]+'</td>'
-					  		+'<td><button type="button" class="btn btn-danger btn-block" onclick="openExamWindow(\''+data[i][0]+'\')" id="'+data[i][0]+'">CONTINUE TEST</button></td>'
+					  		+'<td><button type="button" class="btn btn-warning btn-block btn-xs" onclick="openExamWindow(\''+data[i][0]+'\')" id="'+data[i][0]+'"><b>Continue Test</b></button></td>'
 					  		+'</tr>';
 				  
 
@@ -48,7 +48,7 @@ $(document).ready(function(){
 				  innerhtml +='<tr>'
 					  		+'<td>'+j+'</td>'
 					  		+'<td>'+data[i][2]+'</td>'
-					  		+'<td><a href="buytestseries.php" class="btn btn-primary btn-block">BUY TEST SERIES</a></td>'
+					  		+'<td><a href="buytestseries.php" class="btn btn-primary btn-block btn-xs"><b>Buy Test Series</b></a></td>'
 					  		+'</tr>';
 				  
 				}
@@ -80,7 +80,7 @@ function openExamWindow(subjectName)
 		else
 			{
 		
-				childWindow = window.open('notSubscribed.php','testWindow','toolbar=no, location=no, directories=no, status=no, menubar=no,height = 800px,width = 1100px');
+				childWindow = window.open('notSubscribed.php','testWindow','toolbar=no, location=no, directories=no, status=no, menubar=no,height ='+screen.height+'px,width = '+screen.width+'px');
 			}
 		
      },"json");
@@ -113,51 +113,6 @@ function checkWindow()
       
         
     }
-}
-
-
-
-
-function showResultsWindow(subject,id,length)
-{
-	
-	var result= "result"+id;
-	var expand = "expandTab"+id;
-	var i,innerhtml;
-    for(i=1;i<=length;i++)
-    	{
-    		var result1 = "result"+i;
-    		$('#'+result1).slideUp(500);
-    		 var expand1 = "expandTab"+i;
-    		document.getElementById(expand1).src = 'images/plus.png';
-    		document.getElementById(expand1).setAttribute("ticked", "0");
-    	}
-    $('#'+result).slideDown(500);
-    $('#'+result).html('<img src="images/redloader.gif" style="height: 30px;width: 30px;margin-top:40px;">');
-    document.getElementById(expand).src = 'images/minus.png';
-    document.getElementById(expand).setAttribute("ticked", "1");
-    
-    $(document).ready(function(){
-    	
-    	$.post("phpFiles/getTestScores.php",{subject :subject},function(data){
-    		
-    		if(data.error == '1')
-    			{
-    			  window.location.reload();
-    			}
-    		else
-    			{
-    			 innerhtml ='<div style="width:400px;height:40px;margin:auto;margin-top:20px;font-family:cursive">'
-    				       +'Your score for this test is  &nbsp;&nbsp;"'+data.score+'"</div>'
-    				       +'<div class="viewSolutions"  onClick="showAnswers(\''+subject+'\')">VIEW YOUR ANSWERS AND SOLUTIONS</div>';
-    			}
-    		
-    		 $('#'+result).html(innerhtml);
-    		
-    	},"json");
-    });
-    
- 
 }
 
 

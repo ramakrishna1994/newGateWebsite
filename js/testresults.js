@@ -28,7 +28,7 @@
 				 innerhtml +='<tr>'
 				  		+'<td>'+j+'</td>'
 				  		+'<td>'+data[i][2]+'</td>'
-				  		+'<td><button type="button" class="btn btn-danger btn-block" onclick="showExpand(\''+data[i][0]+'\','+j+','+data.length+')" id="expandTab'+j+'" ticked="0" ><div class="testComplete" onclick="showExpand(\''+data[i][0]+'\','+j+','+data.length+')" id="'+data[i][0]+'">TEST RESULTS</button></td>'
+				  		+'<td><button type="button" class="btn btn-danger btn-block btn-xs" onclick="showResults(\''+data[i][0]+'\')"><b>Test Results</b></button></td>'
 				  		+'</tr>';
 				  
 				  
@@ -56,24 +56,11 @@
 
 	
 
-function showResultsWindow(subject,id,length)
+function showResults(subject)
 {
 		
-		var result= "result"+id;
-		var expand = "expandTab"+id;
-		var i,innerhtml;
-	    for(i=1;i<=length;i++)
-	    	{
-	    		var result1 = "result"+i;
-	    		$('#'+result1).slideUp(500);
-	    		 var expand1 = "expandTab"+i;
-	    		document.getElementById(expand1).src = 'images/plus.png';
-	    		document.getElementById(expand1).setAttribute("ticked", "0");
-	    	}
-	    $('#'+result).slideDown(500);
-	    $('#'+result).html('<img src="images/redloader.gif" style="height: 30px;width: 30px;margin-top:40px;">');
-	    document.getElementById(expand).src = 'images/minus.png';
-	    document.getElementById(expand).setAttribute("ticked", "1");
+		
+	    
 	    
 	    $(document).ready(function(){
 	    	
@@ -90,7 +77,7 @@ function showResultsWindow(subject,id,length)
 	    				       +'<div class="viewSolutions"  onClick="showAnswers(\''+subject+'\')">VIEW YOUR ANSWERS AND SOLUTIONS</div>';
 	    			}
 	    		
-	    		 $('#'+result).html(innerhtml);
+	    		 
 	    		
 	    	},"json");
 	    });

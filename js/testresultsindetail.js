@@ -69,13 +69,13 @@ function displayPopupQuestions(subject)
 						 }
 					  	
 					    if(i==1)
-					    	innerhtml += '<div class="selected" id="question'+i+'" onclick="clickQuestion(\''+subject+'\','+i+','+1+')">'+j+'</div>';
+					    	innerhtml += '<button class="btn btn-success" id="question'+i+'" onclick="clickQuestion(\''+subject+'\','+i+','+1+')">'+j+'</button>';
 					    else
-					    	innerhtml += '<div class="notSelected" id="question'+i+'" onclick="clickQuestion(\''+subject+'\','+i+','+1+')">'+j+'</div>';
+					    	innerhtml += '<button class="btn btn-danger" id="question'+i+'" onclick="clickQuestion(\''+subject+'\','+i+','+1+')">'+j+'</button>';
 					  }
-				  innerhtml += '<div class="marksDistributionButtonNotSelected" id="marksDistribution" onclick="clickQuestion(\''+subject+'\','+-1+','+2+')">MARKS DISTRIBUTION</div>';
+				 
 				  getPopupQuestion(subject,1);
-				  $('#popupQuestionsDivision').html(innerhtml);
+				  $('#questionNosDivision').html(innerhtml);
 				  
 				 
 			 
