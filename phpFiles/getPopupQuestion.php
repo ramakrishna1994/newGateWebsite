@@ -5,7 +5,7 @@ require_once 'isSessionSet.php';
 
 $questionNo=mysqli_real_escape_string($con,$_POST["questionNo"]);
 $tableName=$_SESSION['gateusername'].".tests";
-$examname = mysqli_real_escape_string($con,$_POST["subject"]);
+$examname = $_SESSION['subjectresult'];
 $filename=$examname."questions";
 
 

@@ -7,7 +7,7 @@ require_once 'connection.php';
 
 
 $tableName=$_SESSION['gateusername'].".tests";
-$examname = mysqli_real_escape_string($con,$_POST["subject"]);;
+$examname = $_SESSION['subjectresult'];
 $filename=$examname."questions";
 
 //echo $filename;

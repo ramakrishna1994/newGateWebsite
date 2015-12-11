@@ -1,5 +1,7 @@
 <?php 
 require_once 'phpFiles/isSessionSet.php';
+$_SESSION['subjectresult']=$_GET['subjectname'];
+//echo $_SESSION['subjectresult'];
 ?>
 
 
@@ -32,6 +34,7 @@ require_once 'phpFiles/isSessionSet.php';
 	</style>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   	
 </head>
 
@@ -87,14 +90,23 @@ require_once 'phpFiles/isSessionSet.php';
   				</ul>		
   				<div class="row">
   					<div class="col-sm-9 well well-sm">
-							<div class="media text-center" id="questionNo">
+							<div class="media">
+								<div class="col-sm-10 text-center" id="questionNo">Question no : 01</div>
+  								<div class="col-sm-2 text-right" id="maxMarks">Max Marks:2</div>
   								
-    									Question no : 01
   							</div>
   							
   							<div class="media" id="question">
   								
     									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. Aliquam in felis sit amet augue.
+  							</div>
+  							<div class="media" id="image">
+  								
+    								
+  							</div>
+  							<div class="media" id="numerical">
+  								
+    								
   							</div>
   							<div class="media" id="optionA">
   								
@@ -114,46 +126,55 @@ require_once 'phpFiles/isSessionSet.php';
   							</div>
   							
   							<div class="media text-center">
-  								<div class="col-sm-6">
+  								<div class="col-sm-6" id="yourAnswer">
   									You have answered B
   								</div>
-  								<div class="col-sm-6">
+  								<div class="col-sm-6" id="correctAnswer">
 	  								You have answered B
   								</div>
   							</div>
   							
   							<div class="media text-center">
-  								<button type="button" class="btn btn-danger">View Solution</button>
+  								<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#solution">View Solution</button>
   							</div>
+							
+							<div class="media">
+  								<div class="collapse" id="solution">
+    									Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  								</div>						
+							</div>
+							
 					</div>
-  					<div class="col-sm-3 well well-sm">
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
-  						<button class="btn btn-default margin-up">1</button>
+  					<div class="col-sm-3 well well-sm" id="questionsDivision">
   						
-  				</div>
-  				</div>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  						<button class="btn btn-default margin-up">1</button>
+  					</div>
+  				
+  			</div>
 			
 			
 		</div>
-	
+		
 	</div>
+	<script src="js/testresultsindetail.js"></script>
 </body>
 </html>

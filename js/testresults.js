@@ -28,7 +28,7 @@
 				 innerhtml +='<tr>'
 				  		+'<td>'+j+'</td>'
 				  		+'<td>'+data[i][2]+'</td>'
-				  		+'<td><button type="button" class="btn btn-danger btn-block btn-xs" onclick="showResults(\''+data[i][0]+'\')"><b>Test Results</b></button></td>'
+				  		+'<td><a href="testresultsindetail.php?subjectname='+data[i][0]+'" class="btn btn-danger btn-block btn-xs" ><b>Test Results</b></a></td>'
 				  		+'</tr>';
 				  
 				  

@@ -1,52 +1,16 @@
 var noOfQuestions,previousQuestionNo,nextQuestionNo;
 
 
-function showAnswers(subject)
-{
-	
-
- 	$('#popup').slideDown(500,function(){
- 		
- 		
- 		displayPopupQuestions(subject);
- 	});
  	
- 	
-	
 
-}
-
-function closePopup()
-{
-	
-
-	 	$('#popup').slideUp(500,function(){
-	 		
-	 		$('#popupQuestionsDivision').html('');
-	 		$('#popupQuestionNoDivision').html('');
-	 		$('#popupQuestionDivision').html('');
-	 		$('#popupImageDivision').html('');
-	 		$('#popupoptionADivision').html('');
-	 		$('#popupoptionBDivision').html('');
-	 		$('#popupoptionCDivision').html('');
-	 		$('#popupoptionDDivision').html('');
-	 		$('#popupYourAnswerDivision').html('');
-	 		$('#popupCorrectAnswerDivision').html('');
-	 		$('#popupSolutionDivision').html('');
-	 		
-	 	});
-	 	
-	 	
-	
-	
-}
-
-function displayPopupQuestions(subject)
+displayPopupQuestions();
+getQuestion(1);
+function displayPopupQuestions()
 {
 	 $(document).ready(function(){
 		 
 		 
-		 $.post("phpFiles/displayPopupQuestions.php",{subject:subject},function(data){
+		 $.post("phpFiles/displayPopupQuestions.php",function(data){
 			 
 			 
 			 
@@ -69,13 +33,13 @@ function displayPopupQuestions(subject)
 						 }
 					  	
 					    if(i==1)
-					    	innerhtml += '<button class="btn btn-success" id="question'+i+'" onclick="clickQuestion(\''+subject+'\','+i+','+1+')">'+j+'</button>';
+					    	innerhtml += '<button class="btn btn-success margin-all"  onclick="getQuestion('+i+')">'+j+'</button>';
 					    else
-					    	innerhtml += '<button class="btn btn-danger" id="question'+i+'" onclick="clickQuestion(\''+subject+'\','+i+','+1+')">'+j+'</button>';
+					    	innerhtml += '<button class="btn btn-danger margin-all"  onclick="getQuestion('+i+')">'+j+'</button>';
 					  }
 				 
-				  getPopupQuestion(subject,1);
-				  $('#questionNosDivision').html(innerhtml);
+				 
+				  $('#questionsDivision').html(innerhtml);
 				  
 				 
 			 
@@ -111,9 +75,9 @@ function clickQuestion(subject,questionNo,calledValue)
 }
 
 
-function getPopupQuestion(subject,questionNo)
+function getQuestion(questionNo)
 {
-	
+	/*
 	$('#popupPreviousDivision').show();
 	$('#popupQuestionNoDivision').show();
 	$('#popupRightOrWrongDivision').show();
@@ -135,127 +99,85 @@ function getPopupQuestion(subject,questionNo)
 	$('#popupCorrectAnswerDivision').html('<img src="images/redloader.gif" style="height: 20px;width: 20px">');
 	$('#popupSolutionDivision').hide();
 	
-	
+	*/
 	$(document).ready(function(){
 		 
 		 
-		 $.post("phpFiles/getPopupQuestion.php",{subject:subject,questionNo:questionNo},function(data){
-			 
-			 $('#popupQuestionNoDivision').html('QUESTION NO : '+data.questionNo);
-			 $('#popupMarksDivision').html('MARKS : '+data.marks);
-			 $('#popupQuestionDivision').html(data.question);
+		 $.post("phpFiles/getPopupQuestion.php",{questionNo:questionNo},function(data){
 			 
 			 if(data.error == '1')
+			 {
+			   window.open("tests.php","_self");
+			   return;
+			 }
+		
+			 
+			 $('#questionNo').html('<font color="blue">Question No : '+data.questionNo+'</font>');
+			 $('#maxMarks').html('<font color="blue">Max Marks : '+data.marks+'</font>');
+			 $('#question').html(data.question);
+			 
+			  if(data.isImage == '1')
 				 {
-				   window.open("tests.php","_self");
-				   return;
-				 }
-			 if(data.isImage == '1')
-				 {
-				  	$('#popupImageDivision').show();
-				  	$('#popupImageDivision').html('<img style="align:center" src="'+data.imagePath+'">');
+				  	$('#image').show();
+				  	$('#image').html('<img class="img img-rounded" src="'+data.imagePath+'">');
 				  	
 				 }
 			 else
 				 {
-				    $('#popupImageDivision').hide(); 
-				    $('#popupImageDivision').html('');
+				    $('#image').hide(); 
+				    $('#image').html('');
 				 }
 			 
 			 
 			 if(data.isNumerical == '0')
 				 {
-				 		$('#popupoptionADivision').show();
-				 		$('#popupoptionBDivision').show();
-				 		$('#popupoptionCDivision').show();
-				 		$('#popupoptionDDivision').show();
-				 		$('#popupOptionDivision1').show();
-				 		$('#popupOptionDivision2').show();
-				 		$('#popupOptionDivision3').show();
-				 		$('#popupOptionDivision4').show();
+				 		$('#optionA').show();
+				 		$('#optionB').show();
+				 		$('#optionC').show();
+				 		$('#optionD').show();
 				 		
-				 		$('#popupoptionADivision').html(data.optionA);
-				 		$('#popupoptionBDivision').html(data.optionB);
-				 		$('#popupoptionCDivision').html(data.optionC);
-				 		$('#popupoptionDDivision').html(data.optionD);
-				 		
+				 		$('#optionA').html('A)	'+data.optionA);
+				 		$('#optionB').html('B)	'+data.optionB);
+				 		$('#optionC').html('C)	'+data.optionC);
+				 		$('#optionD').html('D)	'+data.optionD);
 				 }
 			 else
 				 {
-				        $('#popupOptionDivision1').hide();
-				        $('#popupOptionDivision2').hide();
-				        $('#popupOptionDivision3').hide();
-				        $('#popupOptionDivision4').hide();
-				 		$('#popupoptionADivision').hide();
-				 		$('#popupoptionBDivision').hide();
-				 		$('#popupoptionCDivision').hide();
-				 		$('#popupoptionDDivision').hide();
+				        $('#optionA').hide();
+				        $('#optionB').hide();
+				        $('#optionC').hide();
+				        $('#optionD').hide();
 				 }
 			 if(data.yourAnswer == "")
 				 {
-				 		$('#popupYourAnswerDivision').html('<div style="background-color:red"><font color="white">You have not Answered this question</font></div>');
-				 		$('#popupRightOrWrongDivision').html('<image src="images/wrong.jpg" style="height:20px;width:20px;border-radius:50%">');
+				 		$('#yourAnswer').html('<font color="red">You have not Answered this question</font>');
+				 		
 				 }
 			 else if(data.yourAnswer == data.correctAnswer)
 				 {
-				 		$('#popupYourAnswerDivision').html('<div style="background-color:green"><font color="white">You have Answered '+data.yourAnswer+'</font></div>');
-				 		$('#popupRightOrWrongDivision').html('<image src="images/correct.jpg" style="height:20px;width:20px;border-radius:50%">');
+				 		$('#yourAnswer').html('<font color="green">You have Answered '+data.yourAnswer+'</font>');
+				 		
 				 }
 			 else 
 				 {
-				 		$('#popupYourAnswerDivision').html('<div style="background-color:red"><font color="white">You have Answered '+data.yourAnswer+'</font></div>');
-				 		$('#popupRightOrWrongDivision').html('<image src="images/wrong.jpg" style="height:20px;width:20px;border-radius:50%">');
+				 		$('#yourAnswer').html('<font color="red">You have Answered '+data.yourAnswer+'</font>');
+				 		
 				 }
 				 		
 			 
-			 $('#popupCorrectAnswerDivision').html('Correct answer is '+data.correctAnswer);
+			 $('#correctAnswer').html('Correct answer is '+data.correctAnswer);
 			 
 			 
-			 previousQuestionNo = questionNo - 1;
-			 if(previousQuestionNo <=0)
-				 {
-				   previousQuestionNo = noOfQuestions;
-				 }
-			 nextQuestionNo = questionNo + 1;
-			 if(nextQuestionNo == (noOfQuestions+1))
-				 {
-				   nextQuestionNo = 1;
-				 }
-			
-			 document.getElementById("popupPreviousDivision").setAttribute("onclick","clickQuestion('"+subject+"',"+previousQuestionNo+",1)");
-			 document.getElementById("popupNextDivision").setAttribute("onclick","clickQuestion('"+subject+"',"+nextQuestionNo+",1)");
 			 
-			 $('#popupSolutionDivision').hide();
 				 
-			 $('#popupViewSolutionDivision').html('VIEW SOLUTION');
-			 document.getElementById("popupViewSolutionDivision").setAttribute("onclick","viewSolution()");
-				 
-			 $('#popupSolutionDivision').html(data.solution);
+			 	 
+			 $('#solution').html(data.solution);
 			 
 		 },"json");
 	 });
   
 }
 
-
-
-function viewSolution()
-{
-	$('#popupSolutionDivision').slideDown(500);
-
-	$('#popupViewSolutionDivision').html('HIDE SOLUTION');
-	document.getElementById("popupViewSolutionDivision").setAttribute("onclick","hideSolution()");
-	
-}
-
-
-function hideSolution()
-{
-	$('#popupSolutionDivision').slideUp(500);
-	$('#popupViewSolutionDivision').html('VIEW SOLUTION');
-	document.getElementById("popupViewSolutionDivision").setAttribute("onclick","viewSolution()");
-	
-}
 
 
 

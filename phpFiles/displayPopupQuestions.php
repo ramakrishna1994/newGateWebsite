@@ -4,7 +4,7 @@ require_once 'connection.php';
 header('Content-type: application/json');
 
 $tableName=$_SESSION['gateusername'].".tests";
-$subjectname=mysqli_real_escape_string($con,$_POST['subject']);;
+$subjectname=$_SESSION['subjectresult'];
 
 
 $selectquery="select noOfQuestions,activationStatus from `".$tableName."` where testname = '".$subjectname."' ;";
