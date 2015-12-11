@@ -53,9 +53,11 @@ require_once 'phpFiles/isSessionSet.php';
 		</div>
 	</div>
 	
-	
-	
-	
+	<!-- -----------------------------invisible form for opening the results in detail------------------------- -->
+	<form id="invisible_form" action="testresultsindetail.php" method="post" target="_self">
+  		<input id="subjectresult" name="subjectresult" type="hidden" value="default">
+	</form>
+	<!-- ------------------------------------------------------------------------------------------------------ -->
 	
 	<div class="container margin-up">
 	

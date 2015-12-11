@@ -6,42 +6,48 @@
 			"subjectname":"Compiler Design Chapter 01 Test 01",
 			"activationStatus":"0",
 			"noOfQuestions":10,
-			"timer":"00:10:00"
+			"timer":"00:10:00",
+			"totalMarks":10
 		},
 		{
 			"subjectid":"toc0101",
 			"subjectname":"Theory Of Computation Chapter 01 Test 01",
 			"activationStatus":"0",
 			"noOfQuestions":10,
-			"timer":"00:10:00"
+			"timer":"00:10:00",
+			"totalMarks":10
 		},
 		{
 			"subjectid":"cn0101",
 			"subjectname":"Computer Networks Chapter 01 Test 01",
 			"activationStatus":"1",
 			"noOfQuestions":5,
-			"timer":"00:10:00"
+			"timer":"00:10:00",
+			"totalMarks":20
 		},
 		{
 			"subjectid":"ds0101",
 			"subjectname":"Data Structures Chapter 01 Test 01",
 			"activationStatus":"0",
 			"noOfQuestions":10,
-			"timer":"00:10:00"
+			"timer":"00:10:00",
+			"totalMarks":10
 		},
 		{
 			"subjectid":"dbms0101",
 			"subjectname":"Database Management Systems Chapter 01 Test 01",
 			"activationStatus":"1",
 			"noOfQuestions":5,
-			"timer":"00:10:00"
+			"timer":"00:10:00",
+			"totalMarks":10
 		},
 		{
 			"subjectid":"grandtest01",
 			"subjectname":"Gate Grand Test 01",
 			"activationStatus":"0",
 			"noOfQuestions":30,
-			"timer":"00:30:00"
+			"timer":"00:30:00",
+			"totalMarks":40
 		}
 	]
 }

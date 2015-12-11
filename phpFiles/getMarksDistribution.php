@@ -11,7 +11,7 @@ $examname = $_SESSION['subjectresult'];
 $filename=$examname."questions";
 
 //echo $filename;
-$selectquery="select answers,marks from `".$tableName."` where testName = '".$examname."';";
+$selectquery="select totalMarks,answers,marks from `".$tableName."` where testName = '".$examname."';";
 
 $result=mysqli_query($con,$selectquery) or die(mysqli_error($con));
 
@@ -27,7 +27,8 @@ $json = "";
 while($row = mysqli_fetch_array($result)){
 
 	$answerjsondata = json_decode($row["answers"],true);
-	$json .= '[{"totalMarks":'.number_format((float)$row["marks"], 2, '.', '').'},';
+	$json .= '[{"yourMarks":'.number_format((float)$row["marks"], 2, '.', '').',';
+	$json .= '"totalMarks":'.$row["totalMarks"].'},';
 			
 }
 

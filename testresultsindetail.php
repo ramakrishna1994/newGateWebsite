@@ -1,7 +1,10 @@
 <?php 
 require_once 'phpFiles/isSessionSet.php';
-$_SESSION['subjectresult']=$_GET['subjectname'];
-//echo $_SESSION['subjectresult'];
+if(isset($_POST['subjectresult']))
+	$_SESSION['subjectresult']=$_POST['subjectresult'];
+else 
+	header('location:testresults.php');
+//echo $_POST['subjectresult'];
 ?>
 
 
@@ -22,15 +25,7 @@ $_SESSION['subjectresult']=$_GET['subjectname'];
 		{
 			background: #000000;
 		}
-		.rk
-		{
-			
-			background-color:blue;
-			max-width:150px;
-			height:20px;
-			display:inline-block;
-			
-		}
+		
 	</style>
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -82,13 +77,17 @@ $_SESSION['subjectresult']=$_GET['subjectname'];
 		<div class="table-condensed ">
 			
 				
-				<ul class="nav nav-tabs">
-    				<li class="active"><a href="#">Marks And Rankings</a></li>
-    				<li><a href="#">Check Your Answers</a></li>
+				<ul class="nav nav-tabs" style="cursor:pointer;">
+    				<li class="active" id="marksAndRankings" onclick="navigate(1)"><a>Marks And Rankings</a></li>
+    				<li id="answers" onclick="navigate(2)"><a>Check Your Answers</a></li>
     				<li class="pull-right" id="subjectName">Computer Networks Chapter 01 Test 01</li>
     				
-  				</ul>		
-  				<div class="row">
+  				</ul>
+  				
+  				
+  				
+  				<!-- ----------------------Answers Division --------------------------------------------->		
+  				<div class="row" id="answersDivision">
   					<div class="col-sm-9 well well-sm">
 							<div class="media">
 								<div class="col-sm-10 text-center" id="questionNo">Question no : 01</div>
@@ -172,9 +171,81 @@ $_SESSION['subjectresult']=$_GET['subjectname'];
   			</div>
 			
 			
+			<!-- ---------------------------------------------------------------------------------------------------- -->
+			
+			
+			
+			
+			<!-- --------------------------------------Marks And Rankings--------------------------------------------- -->
+			
+				<div class="row well well-sm" id="marksAndRankingsDivision">
+					
+					<div class="col-sm-8">
+						
+							<div class="media text-center ">
+  							
+    							<img class="img-circle" src="images/user.jpg" style="width:100px;height:100px">
+  							
+  							
+  							<div class="row margin-up" id="totalMarks">
+    							
+    						</div>
+    						<div class="row margin-up" id="yourMarks">
+    							Your Marks : 2.33
+    						</div>
+    						
+						
+						</div>
+						
+						
+					</div>
+					<div class="col-sm-4">
+						
+							<table class="table table-condensed table-bordered text-center" id="marksDistribution">
+								<tr>
+									<th colspan="4" class="text-center">Marks Distribution</th>
+									
+								</tr>
+								<tr>
+									<th>Q.No</th>
+									<th>Max Marks</th>
+									<th>Answered</th>
+									<th>Your Marks</th>
+									
+								</tr>
+								<tr class="bg-success">
+									<td>1</td>
+									<td>2</td>
+									<td>AB</td>
+									<td>-0.33</td>
+									
+								</tr>
+								
+							</table>
+						
+					</div>
+						
+				</div>			
+			
+				
+			
+			<!-- ----------------------------------------------------------------------------------------------------- -->
 		</div>
 		
 	</div>
 	<script src="js/testresultsindetail.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -43,7 +43,7 @@ function setAnswer(val)
 		  $.getJSON( "phpFiles/getQuestion.php", { questionNo: current}, function( data ) {
 		
 			  $("#questionNo").html("<b>QUESTION NO : "+data.questionNo+"</b>");
-	          $("#question").html(data.question);
+	          $("#question").html('<b>'+data.question+'</b>');
 	          if(data.error == '1')
 	        	  {
 	        	   window.location.reload();

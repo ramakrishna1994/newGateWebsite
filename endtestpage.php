@@ -23,12 +23,13 @@ require_once 'phpFiles/isSessionSet.php';
 	<div class="container-fluid">
 		<div class="col-sm-offset-4 col-sm-4">
 			<div class="panel panel-primary margin-up">
-  				<div class="panel-heading">
+  				<div class="panel-heading text-center">
   				
   				
-					<center>You have successfully completed your test.<br>
+					You have successfully completed your test.<br>
 					Please click on <b>TEST RESULTS</b> tab for more details.<br>
-					<b><span class="glyphicon glyphicon-thumbs-up"></span> Thanks!!</b></center>
+					<b><span class="glyphicon glyphicon-thumbs-up"></span> Thanks!!</b><br><br>
+					<button type="button" class="btn btn-danger" onclick="window.close()">Close Window</button>
   				
   				</div>
 			</div>

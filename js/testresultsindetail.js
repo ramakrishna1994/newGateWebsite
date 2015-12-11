@@ -1,10 +1,35 @@
-var noOfQuestions,previousQuestionNo,nextQuestionNo;
 
 
+navigate(1);
+
+
+function navigate(val)
+{
+	displayPopupQuestions();
+	getQuestion(1);
+	getMarksDistribution();
+	
+	if(val==1)
+		{
+			document.getElementById("marksAndRankings").className='active';
+			document.getElementById("answers").className='';
+			$('#answersDivision').hide();
+			$('#marksAndRankingsDivision').show();
+			
+		}
+	else
+		{
+			document.getElementById("marksAndRankings").className='';
+			document.getElementById("answers").className='active';
+			$('#answersDivision').show();
+			$('#marksAndRankingsDivision').hide();
+			
+		}
+
+}
  	
 
-displayPopupQuestions();
-getQuestion(1);
+
 function displayPopupQuestions()
 {
 	 $(document).ready(function(){
@@ -18,11 +43,11 @@ function displayPopupQuestions()
 				 
 			if(data.error == '1')
 				{
-					window.open("tests.php","_self");
+					window.open("testresults.php","_self");
 					return;
 				}
 				 noOfQuestions = data.noOfQuestions;
-				  for(i=1;i<=data.noOfQuestions;i++)
+				  for(i=1;i<=data[0].noOfQuestions;i++)
 					  {
 					   
 					  	j=i;
@@ -32,13 +57,14 @@ function displayPopupQuestions()
 					  		j="0"+i;
 						 }
 					  	
-					    if(i==1)
+					    if(data[i].correct==1)
 					    	innerhtml += '<button class="btn btn-success margin-all"  onclick="getQuestion('+i+')">'+j+'</button>';
 					    else
 					    	innerhtml += '<button class="btn btn-danger margin-all"  onclick="getQuestion('+i+')">'+j+'</button>';
 					  }
 				 
 				 
+				  $('#subjectName').html('<font color="blue">'+data[0].subjectName+'</font>');
 				  $('#questionsDivision').html(innerhtml);
 				  
 				 
@@ -49,57 +75,10 @@ function displayPopupQuestions()
 }
 
 
-function clickQuestion(subject,questionNo,calledValue)
-{
-	var question = 'question'+questionNo;
-	var i;
-	for(i=1;i<=noOfQuestions;i++)
-		{
-		   var question1 = 'question'+i;
-		   document.getElementById(question1).className = 'notSelected';
-		}
-	document.getElementById("marksDistribution").className = 'marksDistributionButtonNotSelected';
-	
-	if(calledValue == 1)
-	{
-		document.getElementById(question).className = 'selected';
-		getPopupQuestion(subject, questionNo);
-	}
-	else
-	{
-		document.getElementById("marksDistribution").className = 'marksDistributionButtonSelected';	
-		getMarksDistribution(subject);
-		
-	}
-
-}
 
 
 function getQuestion(questionNo)
 {
-	/*
-	$('#popupPreviousDivision').show();
-	$('#popupQuestionNoDivision').show();
-	$('#popupRightOrWrongDivision').show();
-	$('#popupMarksDivision').show();
-	$('#popupNextDivision').show();
-	$('#popupMainDivision').show();
-	
-	$('#popupMarksDistributionDivision').hide();
-	
-	
-	$('#popupQuestionNoDivision').html('<img src="images/redloader.gif" style="height: 20px;width: 20px">');
-	$('#popupQuestionDivision').html('<img src="images/redloader.gif" style="height: 20px;width: 20px">');
-	$('#popupImageDivision').html('<img src="images/redloader.gif" style="height: 20px;width: 20px">');
-	$('#popupoptionADivision').html('<img src="images/redloader.gif" style="height: 20px;width: 20px">');
-	$('#popupoptionBDivision').html('<img src="images/redloader.gif" style="height: 20px;width: 20px">');
-	$('#popupoptionCDivision').html('<img src="images/redloader.gif" style="height: 20px;width: 20px">');
-	$('#popupoptionDDivision').html('<img src="images/redloader.gif" style="height: 20px;width: 20px">');
-	$('#popupYourAnswerDivision').html('<img src="images/redloader.gif" style="height: 20px;width: 20px">');
-	$('#popupCorrectAnswerDivision').html('<img src="images/redloader.gif" style="height: 20px;width: 20px">');
-	$('#popupSolutionDivision').hide();
-	
-	*/
 	$(document).ready(function(){
 		 
 		 
@@ -107,7 +86,7 @@ function getQuestion(questionNo)
 			 
 			 if(data.error == '1')
 			 {
-			   window.open("tests.php","_self");
+			   window.open("testresults.php","_self");
 			   return;
 			 }
 		
@@ -181,41 +160,44 @@ function getQuestion(questionNo)
 
 
 
-function getMarksDistribution(subject)
+function getMarksDistribution()
 {
-	$('#popupPreviousDivision').hide();
-	$('#popupQuestionNoDivision').hide();
-	$('#popupRightOrWrongDivision').hide();
-	$('#popupMarksDivision').hide();
-	$('#popupNextDivision').hide();
-	$('#popupMainDivision').hide();
-	
-	$('#popupMarksDistributionDivision').show();
-	$('#popupMarksDistributionDivision').html('<img src="images/redloader.gif" style="height: 20px;width: 20px">');
-	
 	var i;
-	 var innerhtml = '<table border="1px solid" style="text-align:center;padding:2px;">'
-		  		   + '<tr><td>Question No</td><td>Given Marks</td><td>Status</td><td>Your Marks</td></tr>';
+	 var innerhtml =	'<tr><th colspan="4" class="text-center">Marks Distribution</th></tr>'
+		 				+'<tr><th>Q.No</th><th>Max Marks</th><th>Answered</th><th>Your Marks</th></tr>';
+		 				 
+		 	
 	$(document).ready(function(){
 		
-		 $.post("phpFiles/getMarksDistribution.php",{subject:subject},function(data){
+		 $.post("phpFiles/getMarksDistribution.php",function(data){
 			 
 				 			
 				 	for(i=1;i<data.length;i++)
 				 		{
 				 		
-				 		 	innerhtml +='<tr><td>'+data[i].questionNo+'</td><td>'+data[i].marks+'</td>';
+				 		 	
 				 		 
-				 		 	if(data[i].correct == 1)
-				 		 		 innerhtml +='<td><image src="images/correct.jpg" style="height:20px;width:20px;border-radius:50%"></td>';
+				 		 		if(data[i].correct == 1)
+				 		 			{
+				 		 			
+				 		 			innerhtml +='<tr class="bg-success"><td>'+data[i].questionNo+'</td><td>'+data[i].marks+'</td><td>Correct</td>';
+				 		 			
+				 		 			}
+				 		 		 
 				 		 	else
-				 		 		 innerhtml +='<td><image src="images/wrong.jpg" style="height:20px;width:20px;border-radius:50%"></td>';
+				 		 		{
+				 		 		innerhtml +='<tr class="bg-danger"><td>'+data[i].questionNo+'</td><td>'+data[i].marks+'</td><td>Wrong</td>';
+				 		 		
+				 		 		}
+				 		 		 
 				 		 	
 				 		 	innerhtml += '<td>'+data[i].yourMarks+'</td></tr>';
 				 		}
-				 	innerhtml +='<tr><td colspan="3">Total Marks</td><td>'+data[0].totalMarks+'</td></tr></table>';
+				 	innerhtml +='<tr><td colspan="3">Total Marks</td><td>'+data[0].yourMarks+'</td></tr></table>';
 					 
-					 $('#popupMarksDistributionDivision').html(innerhtml);
+					 $('#marksDistribution').html(innerhtml);
+					 $('#totalMarks').html('Total Marks : '+data[0].totalMarks);
+					 $('#yourMarks').html('Your Marks : '+data[0].yourMarks);
 			 
 		 },"json");
 		 
@@ -224,9 +206,6 @@ function getMarksDistribution(subject)
 	});
 
 }
-
-
-
 
 
 

@@ -87,8 +87,8 @@ require_once 'phpFiles/isSubscribed.php';
 
 
 
-		<div class="row text-center"><b>
-		 <?php echo $_SESSION['fullNameOfSubject'];?>
+		<div class="row text-center"><b><font color="blue">
+		 <?php echo $_SESSION['fullNameOfSubject'];?></font>
 		</b>
 		</div>
 	</div>
@@ -101,19 +101,17 @@ require_once 'phpFiles/isSubscribed.php';
   				<strong>QUESTION NO : 01</strong>		
   			</div>
   			
-			<div class="panel-group question">
-				<div class="panel panel-default">
-  					<div class="panel-heading">
-  						<table>
-  							<tr>
-  								<td id="question">
-  									What is 2*3 value?	
-      							</td>
-      						</tr>
-      					</table>
+			<div class="question">
+			
+				<div class="media margin-up" >
+  					<div class="media-body" id="question">
+  						 				Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      									commodo consequat.	
+      							
 					</div>
-  				</div>
-  				
+				</div>
+					
+				
   				
   				<div class="panel panel-default" id="numericalAnswerDivision">
   					<div class="panel-heading">
@@ -122,68 +120,58 @@ require_once 'phpFiles/isSubscribed.php';
 					</div>
   				</div>
   				
-  				
-  				
-  				<div class="panel panel-default" style="cursor: pointer;" id="optionADivision">
-  					<div class="panel-heading" onclick="setAnswer(1)">
-  						<table>
-  							<tr>
-  								<td><span class="glyphicon glyphicon-unchecked" id="optionACheckDivision"></span><br> A</td>
-  						 		<td class="optionDivision" id="optionA">
+  				<div class="media margin-up" >
+  					<div class="media-body" id="imageDivision">
   						 				Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
       									commodo consequat.	
-      							</td>
-      						</tr>
-      					</table>
+      							
 					</div>
-  				</div>
+				</div>
+				
   				
   				
-  				<div class="panel panel-default" style="cursor: pointer;" id="optionBDivision">
-  					<div class="panel-heading" onclick="setAnswer(2)">
-  						<table>
-  							<tr>
-  								
-  								<td><span class="glyphicon glyphicon-unchecked" id="optionBCheckDivision"></span><br> B</td>
-  						 		<td class="optionDivision" id="optionB">
+  					<div class="media " onclick="setAnswer(1)" style="cursor: pointer;" id="optionADivision">
+  						<div class="media-left"><span class="glyphicon glyphicon-unchecked " id="optionACheckDivision"></span><br> A</div>
+  					
+  					<div class="media-body" id="optionA">
   						 				Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
       									commodo consequat.	
-      							</td>
-      						</tr>
-      					</table>
+      							
 					</div>
-  				</div>
+					</div>
   				
   				
   				
-  				<div class="panel panel-default" style="cursor: pointer;" id="optionCDivision">
-  					<div class="panel-heading" onclick="setAnswer(3)">
-  						<table>
-  							<tr>
-  								<td><span class="glyphicon glyphicon-check" id="optionCCheckDivision"></span><br> C</td>
-  						 		<td class="optionDivision" id="optionC">
+  				<div class="media " onclick="setAnswer(2)" style="cursor: pointer;" id="optionBDivision">
+  						<div class="media-left"><span class="glyphicon glyphicon-unchecked " id="optionBCheckDivision"></span><br> B</div>
+  					
+  					<div class="media-body" id="optionB">
   						 				Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
       									commodo consequat.	
-      							</td>
-      						</tr>
-      					</table>
+      							
 					</div>
-  				</div>
+				</div>
   				
   				
-  				<div class="panel panel-default" style="cursor: pointer;" id="optionDDivision">
-  					<div class="panel-heading" onclick="setAnswer(4)">
-  						<table>
-  							<tr>
-  								<td><span class="glyphicon glyphicon-unchecked" id="optionDCheckDivision"></span><br> D</td>
-  						 		<td class="optionDivision" id="optionD">
+  				<div class="media " onclick="setAnswer(3)" style="cursor: pointer;" id="optionCDivision">
+  						<div class="media-left"><span class="glyphicon glyphicon-unchecked " id="optionCCheckDivision"></span><br> C</div>
+  					
+  					<div class="media-body" id="optionC">
   						 				Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
       									commodo consequat.	
-      							</td>
-      						</tr>
-      					</table>
+      							
 					</div>
-  				</div>
+				</div>
+  				
+  				<div class="media" onclick="setAnswer(4)" style="cursor: pointer;" id="optionDDivision">
+  						<div class="media-left"><span class="glyphicon glyphicon-unchecked " id="optionDCheckDivision"></span><br> D</div>
+  					
+  					<div class="media-body" id="optionD">
+  						 				Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      									commodo consequat.	
+      							
+					</div>
+				</div>
   				
   				
   				

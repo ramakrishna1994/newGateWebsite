@@ -64,13 +64,13 @@ require_once 'phpFiles/isSessionSet.php';
 	
 	<div class="container margin-up">
 	
-		<div class="table-condensed ">
-			<table class="table table-Bordered table-striped text-center" id="mainDivision">
+		
+			<table class="table table-condensed table-Bordered table-striped text-center" id="mainDivision">
 				
 				<!-- --will be filled dynamically -->			
 			</table>
 			
-		</div>
+		
 	
 	</div>
 </body>

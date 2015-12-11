@@ -22,6 +22,7 @@ if($_SESSION['code'] == $verificationnumber)
 		."subjectName varchar(100),"
 		."timer varchar(20),"
 		."marks varchar(10) not null default 0,"
+		."totalMarks varchar(10) not null default 0,"
 		."statusOfExam int not null default 0,"
 		."activationStatus int not null default 0,"
 		."answers varchar(1000),"
@@ -66,11 +67,12 @@ if($_SESSION['code'] == $verificationnumber)
 			
 			
 			
-		$insertQuery = "insert into `".$emailid.".tests` (testname,subjectName,timer,marks,statusOfExam,activationStatus,answers,marked,noOfQuestions) values("
+		$insertQuery = "insert into `".$emailid.".tests` (testname,subjectName,timer,marks,totalMarks,statusOfExam,activationStatus,answers,marked,noOfQuestions) values("
 				."'".$jsonData["tests"][$i]["subjectid"]."',"
 				."'".$jsonData["tests"][$i]["subjectname"]."',"
 				."'".$jsonData["tests"][$i]["timer"]."',"
 				."'0',"
+				."'".$jsonData["tests"][$i]["totalMarks"]."',"
 				."0,"
 				."'".$jsonData["tests"][$i]["activationStatus"]."',"
 				."'".$answerstring."',"

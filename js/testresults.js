@@ -13,7 +13,7 @@
 		if(data.length != 0)
 		{
 			
-			var i,innerhtml='<table class="table table-Bordered table-striped text-center" ><tr>'
+			var i,innerhtml='<table class="table table-condensed table-bordered table-striped text-center" ><tr>'
 			+'<td><strong>S.No</strong></td>'
 			+'<td><strong>Test Name</strong></td>'
 			+'<td><strong>Test Status</strong></td>'
@@ -28,7 +28,7 @@
 				 innerhtml +='<tr>'
 				  		+'<td>'+j+'</td>'
 				  		+'<td>'+data[i][2]+'</td>'
-				  		+'<td><a href="testresultsindetail.php?subjectname='+data[i][0]+'" class="btn btn-danger btn-block btn-xs" ><b>Test Results</b></a></td>'
+				  		+'<td><button onclick="showResults(\''+data[i][0]+'\')" class="btn btn-danger btn-block btn-xs" ><b>Test Results</b></button></td>'
 				  		+'</tr>';
 				  
 				  
@@ -60,29 +60,10 @@ function showResults(subject)
 {
 		
 		
+	$('#subjectresult').val(subject);
+	$('#invisible_form').submit();
 	    
 	    
-	    $(document).ready(function(){
-	    	
-	    	$.post("phpFiles/getTestScores.php",{subject :subject},function(data){
-	    		
-	    		if(data.error == '1')
-	    			{
-	    			  window.location.reload();
-	    			}
-	    		else
-	    			{
-	    			 innerhtml ='<div style="width:400px;height:40px;margin:auto;margin-top:20px;font-family:cursive">'
-	    				       +'Your score for this test is  &nbsp;&nbsp;"'+data.score+'"</div>'
-	    				       +'<div class="viewSolutions"  onClick="showAnswers(\''+subject+'\')">VIEW YOUR ANSWERS AND SOLUTIONS</div>';
-	    			}
-	    		
-	    		 
-	    		
-	    	},"json");
-	    });
-	    
-	 
 	}
 
 

@@ -9,7 +9,7 @@ $examname = $_SESSION['subjectresult'];
 $filename=$examname."questions";
 
 
-$selectquery="select answers,activationStatus from `".$tableName."` where testName = '".$examname."';";
+$selectquery="select answers,activationStatus,statusOfExam from `".$tableName."` where testName = '".$examname."';";
 
 $result=mysqli_query($con,$selectquery) or die(mysqli_error($con));
 
@@ -23,7 +23,9 @@ $json="";
 while($row = mysqli_fetch_array($result)){
 
 	if($row['activationStatus']!=0)
-	{
+	{	
+		if($row['statusOfExam']==2)
+		{
 		$json .='{';
 		$json .= '"questionNo":'.'"'.$jsonData["questions"][$questionNo]["questionNo"].'",';
 		$json .= '"question":'.'"'.$jsonData["questions"][$questionNo]["question"].'",';
@@ -43,6 +45,11 @@ while($row = mysqli_fetch_array($result)){
 		$json .= '"solution":'.'"'.$jsonData["questions"][$questionNo]["solution"].'"';
 
 		$json .='}';
+		}
+		else 
+		{
+			$json ='{"error":"1"}';
+		}
 	}
 	else
 	{
