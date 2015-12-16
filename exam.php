@@ -87,9 +87,13 @@ require_once 'phpFiles/isSubscribed.php';
 
 
 
-		<div class="row text-center"><b><font color="blue">
-		 <?php echo $_SESSION['fullNameOfSubject'];?></font>
-		</b>
+		<div class="row text-center">
+		<div class="col-sm-offset-2 col-sm-8 text-center">
+		<font color="blue"><b>
+		 <?php echo $_SESSION['fullNameOfSubject'];?>
+		</b></font></div>
+		<div class="col-sm-2">
+		<img src="profilePictures/<?php echo $_SESSION['gateimage']?>" class="img-circle text-right" width="20px" height="20px"> <b><font color="red"><?php echo $_SESSION['gatefirstname'].' '.$_SESSION['gatelastname']?></font></b></div>
 		</div>
 	</div>
 	

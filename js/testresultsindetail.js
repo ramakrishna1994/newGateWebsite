@@ -2,12 +2,13 @@
 
 navigate(1);
 
+displayPopupQuestions();
+getQuestion(1);
+getMarksDistribution();
 
 function navigate(val)
 {
-	displayPopupQuestions();
-	getQuestion(1);
-	getMarksDistribution();
+	
 	
 	if(val==1)
 		{
@@ -151,6 +152,7 @@ function getQuestion(questionNo)
 				 
 			 	 
 			 $('#solution').html(data.solution);
+			 document.getElementById("solution").className = 'collapse';
 			 
 		 },"json");
 	 });
