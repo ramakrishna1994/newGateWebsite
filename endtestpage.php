@@ -29,7 +29,7 @@ require_once 'phpFiles/isSessionSet.php';
 					You have successfully completed your test.<br>
 					Please click on <b>TEST RESULTS</b> tab for more details.<br>
 					<b><span class="glyphicon glyphicon-thumbs-up"></span> Thanks!!</b><br><br>
-					<button type="button" class="btn btn-danger" onclick="window.close()">Close Window</button>
+					<button type="button" class="btn btn-primary" onclick="window.close()">Close Window</button>
   				
   				</div>
 			</div>
