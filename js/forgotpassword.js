@@ -9,11 +9,19 @@ $(document).ready(function(){
 });
 
 
+function clear()
+{
+	document.getElementById("resetEmailDivision").className = 'form-group';
+    document.getElementById("resetEmailErrorSpan").className = '';
+    document.getElementById("resetEmail").setAttribute("data-content", "");
+}
+
 
 function forgotPassword()
 {
 	
 	var emailid = document.getElementById("resetEmail").value;
+	clear();
 	$('#statusDivision').html('<img src="images/redloader.gif" style="height: 2%;width: 2%">');
 	
 	if(emailid == '')

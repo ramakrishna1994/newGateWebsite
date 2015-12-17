@@ -34,6 +34,13 @@ function clearParameters()
 	document.getElementById("registrationPasswordErrorSpan").className = '';
 	document.getElementById("registrationConfirmPasswordErrorSpan").className = '';
 	document.getElementById("registrationDateOfBirthErrorSpan").className = '';
+	
+	document.getElementById("registrationFirstName").setAttribute("data-content", "");
+	document.getElementById("registrationLastName").setAttribute("data-content", "");
+	document.getElementById("registrationEmail").setAttribute("data-content", "");
+	document.getElementById("registrationPassword").setAttribute("data-content", "");
+	document.getElementById("registrationConfirmPassword").setAttribute("data-content", "");
+	document.getElementById("registrationDateOfBirth").setAttribute("data-content", "");
 
 
 	
@@ -43,11 +50,16 @@ function clearParameters()
 	document.getElementById("loginEmailErrorSpan").className = '';
 	document.getElementById("loginPasswordErrorSpan").className = '';
 	
+	document.getElementById("loginEmail").setAttribute("data-content", "");
+	document.getElementById("loginPassword").setAttribute("data-content", "");
+	
 	$('#statusDivision').html('');
 	
 }
 
 var registrationemailid,registrationfirstname,registrationlastname,password,dob; 
+
+
 
 function checkRegistrationParameters()
 {
@@ -237,27 +249,6 @@ function checkLoginParameters()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/////////////////////////////////////////////////////////////
 
 
 
