@@ -8,6 +8,19 @@ require_once 'phpFiles/isSubscribed.php';
 
 <html>
 <head>
+	<script language="javascript">
+		document.onmousedown=disableclick;
+		status="Right Click Disabled";
+		function disableclick(event)
+		{
+  			if(event.button==2)
+   			{
+     			//alert(status);
+     			return false;    
+   			}
+		}
+	</script>
+	
 	<style>
 		.margin-up,.margin-up:after,.margin-up:before
 		{
@@ -52,7 +65,7 @@ require_once 'phpFiles/isSubscribed.php';
 	<script src="js/getQuestion.js"></script>
 	<script src="js/firstTimeIndexPageLoad.js"></script>    
 </head>
-<body>
+<body oncontextmenu="return false">
 
 
 	<div class="container-fluid well well-sm">
@@ -92,7 +105,7 @@ require_once 'phpFiles/isSubscribed.php';
 		<font color="blue"><b>
 		 <?php echo $_SESSION['fullNameOfSubject'];?>
 		</b></font></div>
-		<div class="col-sm-2">
+		<div class="col-sm-2 text-center">
 		<img src="profilePictures/<?php echo $_SESSION['gateimage']?>" class="img-circle text-right" width="20px" height="20px"> <b><font color="red"><?php echo $_SESSION['gatefirstname'].' '.$_SESSION['gatelastname']?></font></b></div>
 		</div>
 	</div>
@@ -200,9 +213,9 @@ require_once 'phpFiles/isSubscribed.php';
 			
 			<div class="row text-center">
 				<div class="btn-group">
-  					<b><button type="button" class="btn btn-primary" id="hoursDivision">00</button>
-  					<button type="button" class="btn btn-primary" id="minutesDivision">00</button>
-  					<button type="button" class="btn btn-primary" id="secondsDivision">30</button></b>
+  					<b><button type="button" class="btn btn-primary" id="hoursDivision" title="Hours">00</button> :
+  					<button type="button" class="btn btn-primary" id="minutesDivision" title="Minutes">00</button> :
+  					<button type="button" class="btn btn-primary" id="secondsDivision" title="Seconds">30</button></b>
 				</div>
 			</div>
 			<div class="row margin-up pallete" id="numbersDivision" style="border-bottom:1px solid;border-top:1px solid;border-color:black">

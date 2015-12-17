@@ -80,7 +80,7 @@
 	  $.getJSON( "phpFiles/saveAndReviewQuestion.php", { questionNo : current, answer:value ,marked:marked }, function( data ) {
 	
 		  $("#questionNo").html("<b>QUESTION NO : "+data.questionNo+"</b>");
-          $("#question").html(data.question);
+		  $("#question").html("<b>"+data.question+"</b>");
           $('#imageDivision').hide();
           
           

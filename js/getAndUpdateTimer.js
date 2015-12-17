@@ -79,10 +79,27 @@ function startTimer()
     	{
     	 minutes="0"+minutes;
     	}
+    if(minutes == 0)
+    	{
+    		if(seconds%2 == 0)
+    		{
+    			document.getElementById('secondsDivision').className = 'btn btn-danger';
+    			document.getElementById('minutesDivision').className = 'btn btn-danger';
+    			document.getElementById('hoursDivision').className = 'btn btn-danger';
+    		}
+    		if(seconds%2 == 1)
+        	{
+    			document.getElementById('secondsDivision').className = 'btn btn-primary';
+    			document.getElementById('minutesDivision').className = 'btn btn-primary';
+    			document.getElementById('hoursDivision').className = 'btn btn-primary';
+        	}
+        
+    	}
     if(seconds < 10)
     	{
     	 seconds="0"+seconds;
     	}
+    
       $("#hoursDivision").html("");
 	  $("#minutesDivision").html("");
 	  $("#secondsDivision").html("");
