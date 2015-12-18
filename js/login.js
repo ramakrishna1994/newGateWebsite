@@ -403,7 +403,7 @@ function verifyVerificationNumber()
 		    	  
 		    	  
 			    
-	        	$('#statusDivision').html('<font color="green">Successfully registered!! Please Login</font>');
+	        	$('#statusDivision').html('<font color="green">Successfully registered!! <br>Please Click on <a type="button" href="home.html" class="btn btn-success btn-xs">Login</a> to proceed</font>');
 	        	document.getElementById("verificationnumber").value="";
 	        	
 	        	
