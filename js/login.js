@@ -70,7 +70,7 @@ function checkRegistrationParameters()
 	 password = document.getElementById("registrationPassword").value;
 	 dob = document.getElementById("registrationDateOfBirth").value;
 	document.getElementById("statusDivision").className = 'alert text-center';
-	$('#statusDivision').html('<img src="images/redloader.gif" style="height: 2%;width: 2%">');
+	$('#statusDivision').html('<img src="images/loader.gif" style="height: 2%;width: 2%">');
 	
 	
 	if(document.getElementById("registrationFirstName").value == "")
@@ -203,7 +203,7 @@ function checkLoginParameters()
 	
 	clearParameters();
 	document.getElementById("statusDivision").className = 'alert text-center';
-	$('#statusDivision').html('<img src="images/redloader.gif" style="height: 2%;width: 2%">');
+	$('#statusDivision').html('<img src="images/loader.gif" style="height: 2%;width: 2%">');
 
 	
 	if(document.getElementById("loginEmail").value == "")
@@ -365,7 +365,7 @@ function verifyVerificationNumber()
 	var verificationnumber = document.getElementById("verificationnumber").value;
 	
 	
-	 $('#statusDivision').html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
+	 $('#statusDivision').html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
 	 
 	 if(verificationnumber == "")
 		 {
@@ -420,7 +420,7 @@ function verifyVerificationNumber()
 function resendCode()
 {
 	
-	 $('#statusDivision').html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
+	 $('#statusDivision').html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
 	
 	$(document).ready(function(){
 		var request = $.ajax({

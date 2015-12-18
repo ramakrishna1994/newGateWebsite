@@ -88,7 +88,7 @@ else
   				
   				<!-- ----------------------Answers Division --------------------------------------------->		
   				<div class="row" id="answersDivision">
-  					<div class="col-sm-9 well well-sm">
+  					<div class="col-sm-9 margin-up">
 							<div class="media">
 								<div class="col-sm-10 text-center" id="questionNo">Question no : 01</div>
   								<div class="col-sm-2 text-right" id="maxMarks">Max Marks:2</div>
@@ -144,7 +144,7 @@ else
 							</div>
 							
 					</div>
-  					<div class="col-sm-3 well well-sm" id="questionsDivision">
+  					<div class="col-sm-3 margin-up well well-sm" id="questionsDivision">
   						
   						<button class="btn btn-default margin-up">1</button>
   						<button class="btn btn-default margin-up">1</button>
@@ -178,13 +178,13 @@ else
 			
 			<!-- --------------------------------------Marks And Rankings--------------------------------------------- -->
 			
-				<div class="row well well-sm" id="marksAndRankingsDivision">
+				<div class="row margin-up" id="marksAndRankingsDivision">
 					
 					<div class="col-sm-8">
 						
 							<div class="media text-center ">
   							
-    							<img class="img-circle" src="images/user.jpg" style="width:100px;height:100px">
+    							<img class="img-circle" src="profilePictures/<?php echo $_SESSION['gateimage']?>" style="width:100px;height:100px">
   							
   							
   							<div class="row margin-up" id="totalMarks">

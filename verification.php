@@ -8,7 +8,7 @@
 					<div class="col-sm-5 " style="margin-top:6px"><span class = "glyphicon glyphicon-lock"></span></div>
     				<div class="col-sm-2"> 
       					<input type="text" class="form-control" id="verificationnumber" placeholder="Verification Code	" data-toggle="popover"  data-trigger="hover" data-placement="top" data-content="">
-      					<span class="" id="registrationDateOfBirthErrorSpan"></span>
+      					
     				</div>
 		</div>
 		

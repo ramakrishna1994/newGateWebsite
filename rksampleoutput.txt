@@ -1,4 +1,5 @@
 
 UPDATE complexity_v2.codecov_testrunSET table_loading_flag = 0,TEST_NAME = (SELECT Test_NameFROM TTC.Test_RunsWHERE serial_number = 20152541)WHERE test_id = 22967 AND SERIAL_NUM = 2014;
+UPDATE complexity_v2.codecov_testrunSET table_loading_flag = 0,TEST_NAME = (SELECT Test_NameFROM TTC.Test_RunsWHERE serial_number = 20152541)WHERE test_id = 22967 AND SERIAL_NUM = 2014123;
 UPDATE complexity_v2.codecov_testrunSET table_loading_flag = 0,TEST_NAME = (SELECT Test_NameFROM TTC.Test_RunsWHERE serial_number = 20152541)WHERE test_id = 22967 AND SERIAL_NUM = 2014;
-UPDATE complexity_v2.codecov_testrunSET table_loading_flag = 0,TEST_NAME = (SELECT Test_NameFROM TTC.Test_RunsWHERE serial_number = 20152541)WHERE test_id = 22967 AND SERIAL_NUM = 2014;
+UPDATE complexity_v2.codecov_testrunSET table_loading_flag = 0,TEST_NAME = (SELECT Test_NameFROM TTC.Test_RunsWHERE serial_number = 20152541)WHERE test_id = 1 AND SERIAL_NUM = 2;

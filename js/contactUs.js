@@ -3,7 +3,7 @@
 function sendFeedback()
 {
 	
- $('#contactusmessagedivision').html('<img src="images/redloader.gif" style="height: 30px;width: 30px;">');
+ $('#contactusmessagedivision').html('<img src="images/loader.gif" style="height: 30px;width: 30px;">');
  var feedback = document.getElementById("feedback").value; 
  var emailid = document.getElementById("feedbackemailid").value;
  

@@ -58,7 +58,7 @@ require_once 'phpFiles/isSessionSet.php';
 	
 		   
     <div class="col-sm-offset-2 col-sm-2"><img src="images/rk.jpg" class="img img-circle"></div>
-    	<div class="col-sm-6">Hi. I am <b>Krishna Saradhi</b> , <b>CEO</b> and founder of  <i>GOODCREED</i> and designer of 
+    	<div class="col-sm-6">Hi. I am <b>Krishna Saradhi</b> , founder of  <i>GOODCREED</i> and designer of 
      this GATE Online Test Series .I am a gate aspirant like you and i have completed my B-tech from <b>JNTUH college of Engineering 
      </b>,Hyderabad in <i>Computer Science and Engineering</i> in 2015.
      I have taken gate exam in 2015 and ended up with <b>5083 </b>rank.

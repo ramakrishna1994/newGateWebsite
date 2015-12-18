@@ -247,12 +247,12 @@ function setAnswer(val)
 	  $(document).ready(function(){
 		  
 		  $("#imageDivision").hide();
-			 $("#questionNo").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
-			  $("#question").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
-		      $("#optionA").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
-		      $("#optionB").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
-		      $("#optionC").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
-		      $("#optionD").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
+			 $("#questionNo").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
+			  $("#question").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
+		      $("#optionA").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
+		      $("#optionB").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
+		      $("#optionC").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
+		      $("#optionD").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
 		 
 		  
 		  $.getJSON( "phpFiles/getQuestion.php", { questionNo: current}, function( data ) {
@@ -301,7 +301,7 @@ function setAnswer(val)
 	 	    	  if(data.isImage == '1')
 	 	    		  {
 	 	    		   $('#imageDivision').show();
-	 	    		   $('#imageDivision').html('<img src="images/redloader.gif" style="height: 20px;width: 20px">');
+	 	    		   $('#imageDivision').html('<img src="images/loader.gif" style="height: 20px;width: 20px">');
 	 	    		  $('#imageDivision').html('<img src="'+data.imagePath+'">');
 	 	    		   
 	 	    		  }
@@ -336,7 +336,7 @@ function setAnswer(val)
 		 	    	  if(data.isImage == '1')
 		 	    		  {
 		 	    		    $('#imageDivision').show();
-		 	    		    $('#imageDivision').html('<img src="images/redloader.gif" style="height: 20px;width: 20px">');
+		 	    		    $('#imageDivision').html('<img src="images/loader.gif" style="height: 20px;width: 20px">');
 		 	    		    $('#imageDivision').html('<img src="'+data.imagePath+'" >');
 		 	    		   
 		 	    		  }
@@ -435,12 +435,12 @@ function setAnswer(val)
 		
 		 	 
 
-	 $("#questionNo").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
-	  $("#question").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
-    $("#optionA").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
-    $("#optionB").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
-    $("#optionC").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
-    $("#optionD").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
+	 $("#questionNo").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
+	  $("#question").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
+    $("#optionA").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
+    $("#optionB").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
+    $("#optionC").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
+    $("#optionD").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
 
 	 
  $(document).ready(function(){
@@ -496,7 +496,7 @@ function setAnswer(val)
 	    	  if(data.isImage == '1')
 	    		  {
 	    		   $('#imageDivision').show();
-	    		   $('#imageDivision').html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
+	    		   $('#imageDivision').html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
 	    		  $('#imageDivision').html('<img src="'+data.imagePath+'">');
 	    		   
 	    		  }
@@ -537,7 +537,7 @@ function setAnswer(val)
          if(data.isImage == '1')
 		  {
        	  $('#imageDivision').show();
-       	  $('#imageDivision').html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
+       	  $('#imageDivision').html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
        	  $('#imageDivision').html('<img src="'+data.imagePath+'">');
 		   
 		  }
@@ -633,12 +633,12 @@ function setAnswer(val)
 	 
 	 
 	 
-	 $("#questionNo").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
-	  $("#question").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
-    $("#optionA").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
-    $("#optionB").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
-    $("#optionC").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
-    $("#optionD").html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
+	 $("#questionNo").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
+	  $("#question").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
+    $("#optionA").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
+    $("#optionB").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
+    $("#optionC").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
+    $("#optionD").html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
 
 	 
  $(document).ready(function(){
@@ -692,7 +692,7 @@ function setAnswer(val)
        	  if(data.isImage == '1')
 	    		  {
 	    		   $('#imageDivision').show();
-	    		   $('#imageDivision').html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
+	    		   $('#imageDivision').html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
 	    		  $('#imageDivision').html('<img src="'+data.imagePath+'">');
 	    		   
 	    		  }
@@ -733,7 +733,7 @@ function setAnswer(val)
          if(data.isImage == '1')
 		  {
        	  $('#imageDivision').show();
-       	  $('#imageDivision').html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
+       	  $('#imageDivision').html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
        	  $('#imageDivision').html('<img src="'+data.imagePath+'">');
 		   
 		  }

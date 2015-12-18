@@ -16,6 +16,15 @@ if($_SESSION['code'] == $verificationnumber)
 {
 
 		
+		$hashed_password = crypt($password); // let the salt be automatically generated
+		//echo $hashed_password;
+		$insertQuery="insert into ".$table."(emailid,firstname,lastname,password,dob,imagename) values (?,?,?,?,?,'user.jpg');";
+		$stmt = mysqli_prepare($con,$insertQuery);
+		mysqli_stmt_bind_param($stmt, "sssss", $emailid,$firstname,$lastname,$hashed_password,$dob);
+		mysqli_stmt_execute($stmt);
+	
+	
+		
 		$createQuery="create table `".$emailid.".tests`("
 		."id int not null auto_increment,"
 		."testName varchar(100),"
@@ -83,13 +92,8 @@ if($_SESSION['code'] == $verificationnumber)
 				mysqli_query($con,$insertQuery) or die(mysqli_error($con));
 		}
 		
-		$hashed_password = crypt($password); // let the salt be automatically generated
-		//echo $hashed_password;
 		
 		
-		$insertQuery="insert into ".$table."(emailid,firstname,lastname,password,dob,imagename) values ('".$emailid."','".$firstname."','".$lastname."','".$hashed_password."','".$dob."','user.jpg');";
-		
-		mysqli_query($con,$insertQuery) or die(mysqli_error($con));
 		echo '{"error":"0"}';
 		
 	

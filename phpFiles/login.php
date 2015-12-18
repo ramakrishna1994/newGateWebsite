@@ -11,15 +11,18 @@ $emailidexists = 0;
 $passwordexists = 0;
 
 
-$selectQuery="select * from users where emailid='".$emailid."';" ;
+$selectQuery="select * from users where emailid=?" ;
+$stmt = mysqli_prepare($con, $selectQuery);
+mysqli_stmt_bind_param($stmt, "s", $emailid);
+$stmt->execute();
+$result = $stmt->get_result();
 
-$result=mysqli_query($con,$selectQuery) or die(mysqli_error($con));
 
 
 
 
 
-	while($row=mysqli_fetch_array($result))
+	while($row = $result->fetch_assoc())
 	{
 		//echo crypt($password, $row['password']).'      ';
 		//echo $row['password'];

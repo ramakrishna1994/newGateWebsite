@@ -29,7 +29,7 @@ function clearParameters()
 function changePassword()
 {
 	clearParameters();
-	 $('#statusDivision').html('<img src="images/redloader.gif" style="height: 3%;width: 2%;">');
+	 $('#statusDivision').html('<img src="images/loader.gif" style="height: 3%;width: 2%;">');
 	var currentpassword = document.getElementById('currentPassword').value;
 	var newpassword = document.getElementById('newPassword').value;
 	var confirmnewpassword = document.getElementById('confirmPassword').value;
@@ -163,7 +163,7 @@ function getProfilePic()
 function updateProfilePic()
 {
 	
-	 $('#statusDivision').html('<img src="images/redloader.gif" style="height: 3%;width: 2%">');
+	 $('#statusDivision').html('<img src="images/loader.gif" style="height: 3%;width: 2%">');
 	 var formData = new FormData();
      
      formData.append( 'image', $( '#image' )[0].files[0] );

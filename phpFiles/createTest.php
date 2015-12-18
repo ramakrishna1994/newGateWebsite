@@ -7,10 +7,14 @@ $_SESSION['examname']=mysqli_real_escape_string($con,$_POST['test']);
 $username=$_SESSION['gateusername'];
 $tableName=$username.".tests";
 
-$selectQuery = "select activationStatus,noOfQuestions,subjectName from `".$tableName."` where testName = '".$_SESSION['examname']."';";
-$result = mysqli_query($con,$selectQuery) or die(mysqli_error($con));
+$selectQuery = "select activationStatus,noOfQuestions,subjectName from `".$tableName."` where testName = ?";
+$stmt = mysqli_prepare($con, $selectQuery);
+mysqli_stmt_bind_param($stmt,"s",$_SESSION['examname']);
+mysqli_stmt_execute($stmt);
+$result = $stmt->get_result();
 
-while($row = mysqli_fetch_array($result))
+
+while($row = $result->fetch_assoc())
 {
 	if($row['activationStatus'] == 1)
 	{
