@@ -4,7 +4,7 @@ require_once 'connection.php';
 
 
 $emailid = mysqli_real_escape_string($con,$_POST['emailid']);
-$selectQuery = "select password from users where emailid = '".$emailid."';";
+$selectQuery = "select resetpasswordhash from users where emailid = '".$emailid."';";
 
 $result = mysqli_query($con,$selectQuery) or die(mysqli_error($con));
 
@@ -17,10 +17,11 @@ else
 	
 	while($row = mysqli_fetch_array($result))
 	{
-		$password = $row['password'];
+		$resetpasswordhash = $row['resetpasswordhash'];
 	}
        echo '{"error":"0"}';
-	sendMail($password,$emailid);
+       echo 'http://localhost/resetpassword.php?p='.$resetpasswordhash;
+	sendMail($resetpasswordhash,$emailid);
 	
 	//echo $password;
 }

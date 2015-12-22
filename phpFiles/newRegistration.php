@@ -18,6 +18,7 @@ $createQuery="create table if not exists ".$table."("
               ."password varchar(255),"
               ."dob varchar(30),"
               ."imagename varchar(100),"
+              ."resetpasswordhash varchar(32),"
               ."primary key(id));";
 
 mysqli_query($con,$createQuery) or die(mysqli_error($con));

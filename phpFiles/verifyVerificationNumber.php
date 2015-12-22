@@ -15,12 +15,18 @@ $table="users";
 if($_SESSION['code'] == $verificationnumber)
 {
 
-		
+		$resetpasswordhash = '';
+		for($i=1;$i<=32;$i++)
+		{
+			$random = mt_rand(0,9);
+			$resetpasswordhash.=$random;
+		}
+		//echo $resetpasswordhash;
 		$hashed_password = crypt($password); // let the salt be automatically generated
 		//echo $hashed_password;
-		$insertQuery="insert into ".$table."(emailid,firstname,lastname,password,dob,imagename) values (?,?,?,?,?,'user.jpg');";
+		$insertQuery="insert into ".$table."(emailid,firstname,lastname,password,dob,resetpasswordhash,imagename) values (?,?,?,?,?,?,'user.jpg');";
 		$stmt = mysqli_prepare($con,$insertQuery);
-		mysqli_stmt_bind_param($stmt, "sssss", $emailid,$firstname,$lastname,$hashed_password,$dob);
+		mysqli_stmt_bind_param($stmt, "ssssss", $emailid,$firstname,$lastname,$hashed_password,$dob,$resetpasswordhash);
 		mysqli_stmt_execute($stmt);
 	
 	
