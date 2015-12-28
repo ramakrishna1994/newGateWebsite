@@ -23,7 +23,7 @@ else
        echo 'http://localhost/resetpassword.php?p='.$resetpasswordhash;
 	sendMail($resetpasswordhash,$emailid);
 	
-	//echo $password;
+	
 }
 
 
@@ -61,7 +61,7 @@ else
 						<table style='border:1px solid;border-color:black;'>
 						<tr>
 						
-						<th>www.gate2016.goodcreed.in/resetpassword?token=".$password."</th>
+						<th>http://gate2016.goodcreed.in/resetpassword.php?p=".$password."</th>
 						</tr>
 						</table>
 						</body>

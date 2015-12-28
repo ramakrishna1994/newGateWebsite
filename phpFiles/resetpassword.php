@@ -4,26 +4,25 @@
 	$resetpasswordhash = $_POST['p'];
 	$password = $_POST['password'];
 	
-	$selectQuery="select * from users where resetpasswordhash=?" ;
-	$stmt = mysqli_prepare($con, $selectQuery);
-	mysqli_stmt_bind_param($stmt, "s", $resetpasswordhash);
-	$stmt->execute();
-	$stmt->store_result();
-	//echo mysqli_stmt_num_rows($stmt);
+	
+	$selectQuery1="select * from users where resetpasswordhash='".$resetpasswordhash."'" ;
+	$result1 = mysqli_query($con,$selectQuery1) or die(mysqli_error($con));
 	
 	
-	if(mysqli_stmt_num_rows($stmt) > 0)
-	{		
+	
+	
+		if(mysqli_num_rows($result1) > 0)
+		{		
 			
-			$selectQuery="select * from users where resetpasswordhash=?" ;
-			$stmt = mysqli_prepare($con, $selectQuery);
-			mysqli_stmt_bind_param($stmt, "s", $resetpasswordhash);
-			$stmt->execute();
-			$result = $stmt->get_result();
+			
+			$selectQuery2="select emailid,password from users where resetpasswordhash='".$resetpasswordhash."'";
+			
+			$result2 = mysqli_query($con,$selectQuery2) or die(mysqli_error($con));
+			
 		
-			while($row = $result->fetch_assoc())
+			while($row2 = mysqli_fetch_array($result2))
 			{
-				if($row['password']==crypt($password, $row['password']))
+				if($row2['password']==crypt($password, $row2['password']))
 					{
 						echo '{"error":"2"}';
 					}
@@ -36,17 +35,19 @@
 							$resetpasswordhash.=$random;
 						}
 						$hashed_password = crypt($password);
-						$updateQuery = "update users set password = '".$hashed_password."',resetpasswordhash = '".$resetpasswordhash."' where emailid = '".$row['emailid']."'";
+						$updateQuery = "update users set password = '".$hashed_password."',resetpasswordhash = '".$resetpasswordhash."' where emailid = '".$row2['emailid']."'";
 						mysqli_query($con,$updateQuery) or die(mysqli_error($con));
 						echo '{"error":"0"}';		
 					}
 			}
 		
-	}
-	else
-	{
-		echo '{"error":"1"}';
-	}
+		}
+		else
+		{
+			echo '{"error":"1"}';
+		}
 	
-
+	
+	
+	
 ?>

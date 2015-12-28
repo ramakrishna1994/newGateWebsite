@@ -11,29 +11,29 @@ $emailidexists = 0;
 $passwordexists = 0;
 
 
-$selectQuery="select * from users where emailid=?" ;
+$selectQuery="select firstname,lastname,password,imagename from users where emailid=?" ;
 $stmt = mysqli_prepare($con, $selectQuery);
 mysqli_stmt_bind_param($stmt, "s", $emailid);
-$stmt->execute();
-$result = $stmt->get_result();
+mysqli_stmt_execute($stmt);
+mysqli_stmt_bind_result($stmt, $firstname, $lastname,$tablepassword,$imagename);
 
 
 
 
 
 
-	while($row = $result->fetch_assoc())
+	while(mysqli_stmt_fetch($stmt))
 	{
 		//echo crypt($password, $row['password']).'      ';
 		//echo $row['password'];
-		if($row['password']==crypt($password, $row['password']))
+		if($tablepassword==crypt($password, $tablepassword))
 		{
 			
 
 			$_SESSION['gateusername']=$emailid;
-			$_SESSION['gatefirstname']=$row['firstname'];
-			$_SESSION['gatelastname']=$row['lastname'];
-			$_SESSION['gateimage']=$row['imagename'];
+			$_SESSION['gatefirstname']=$firstname;
+			$_SESSION['gatelastname']=$lastname;
+			$_SESSION['gateimage']=$imagename;
 			$emailidexists = 1;
 			$passwordexists = 1;
 			echo '{"error":"0"}';
@@ -52,7 +52,7 @@ $result = $stmt->get_result();
 	
 	
 
-
+ mysqli_stmt_fetch($stmt);
 
 mysqli_close($con);
 ?>

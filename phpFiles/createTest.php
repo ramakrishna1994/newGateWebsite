@@ -11,15 +11,15 @@ $selectQuery = "select activationStatus,noOfQuestions,subjectName from `".$table
 $stmt = mysqli_prepare($con, $selectQuery);
 mysqli_stmt_bind_param($stmt,"s",$_SESSION['examname']);
 mysqli_stmt_execute($stmt);
-$result = $stmt->get_result();
+mysqli_stmt_bind_result($stmt, $activationStatus, $noOfQuestions,$subjectName);
 
 
-while($row = $result->fetch_assoc())
+while(mysqli_stmt_fetch($stmt))
 {
-	if($row['activationStatus'] == 1)
+	if($activationStatus == 1)
 	{
-		$_SESSION['noOfQuestions']=$row['noOfQuestions'];
-		$_SESSION['fullNameOfSubject']=$row['subjectName'];
+		$_SESSION['noOfQuestions']=$noOfQuestions;
+		$_SESSION['fullNameOfSubject']=$subjectName;
 		$updateQuery = "update `".$tableName."` set statusOfExam = 1 where testName = '".$_SESSION['examname']."';";
 		mysqli_query($con,$updateQuery) or die(mysqli_error($con));
 		echo '{"error":"0"}';
