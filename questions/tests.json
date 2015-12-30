@@ -2,6 +2,9 @@
 	"tests":
 	[
 		{
+			"noOfTests":10
+		},
+		{
 			"subjectid":"cd0101",
 			"subjectname":"Compiler Design Chapter 01 Test 01",
 			"activationStatus":"0",
@@ -13,7 +16,39 @@
 			"subjectid":"toc0101",
 			"subjectname":"Theory Of Computation Chapter 01 Test 01",
 			"activationStatus":"0",
+			"noOfQuestions":15,
+			"timer":"00:10:00",
+			"totalMarks":10
+		},
+		{
+			"subjectid":"os0101",
+			"subjectname":"Operating Systems Chapter 01 Test 01",
+			"activationStatus":"0",
 			"noOfQuestions":10,
+			"timer":"00:10:00",
+			"totalMarks":10
+		},
+		{
+			"subjectid":"os0102",
+			"subjectname":"Operating Systems Chapter 01 Test 01",
+			"activationStatus":"0",
+			"noOfQuestions":10,
+			"timer":"00:10:00",
+			"totalMarks":10
+		},
+		{
+			"subjectid":"toc0102",
+			"subjectname":"Theory Of Computation Chapter 01 Test 02",
+			"activationStatus":"1",
+			"noOfQuestions":15,
+			"timer":"00:10:00",
+			"totalMarks":10
+		},
+		{
+			"subjectid":"toc0103",
+			"subjectname":"Theory Of Computation Chapter 01 Test 03",
+			"activationStatus":"1",
+			"noOfQuestions":15,
 			"timer":"00:10:00",
 			"totalMarks":10
 		},
@@ -36,7 +71,7 @@
 		{
 			"subjectid":"dbms0101",
 			"subjectname":"Database Management Systems Chapter 01 Test 01",
-			"activationStatus":"1",
+			"activationStatus":"0",
 			"noOfQuestions":5,
 			"timer":"00:10:00",
 			"totalMarks":10

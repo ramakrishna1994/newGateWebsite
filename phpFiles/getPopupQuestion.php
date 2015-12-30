@@ -13,8 +13,8 @@ $selectquery="select answers,activationStatus,statusOfExam from `".$tableName."`
 
 $result=mysqli_query($con,$selectquery) or die(mysqli_error($con));
 
-$str = file_get_contents('../questions/'.$filename.'.json');
-$jsonData = json_decode($str, true);
+//$str = file_get_contents('../questions/'.$filename.'.json');
+//$jsonData = json_decode($str, true);
 
 
 
@@ -26,30 +26,37 @@ while($row = mysqli_fetch_array($result)){
 	{	
 		if($row['statusOfExam']==2)
 		{
-		$json .='{';
-		$json .= '"questionNo":'.'"'.$jsonData["questions"][$questionNo]["questionNo"].'",';
-		$json .= '"question":'.'"'.$jsonData["questions"][$questionNo]["question"].'",';
-		$json .= '"optionA":'.'"'.$jsonData["questions"][$questionNo]["optionA"].'",';
-		$json .= '"optionB":'.'"'.$jsonData["questions"][$questionNo]["optionB"].'",';
-		$json .= '"optionC":'.'"'.$jsonData["questions"][$questionNo]["optionC"].'",';
-		$json .= '"optionD":'.'"'.$jsonData["questions"][$questionNo]["optionD"].'",';
-		$json .= '"isNumerical":'.'"'.$jsonData["questions"][$questionNo]["isNumerical"].'",';
-		$json .= '"isImage":'.'"'.$jsonData["questions"][$questionNo]["isImage"].'",';
-		$json .= '"imagePath":'.'"'.$jsonData["questions"][$questionNo]["imagePath"].'",';
-		$json .= '"marks":'.'"'.$jsonData["questions"][$questionNo]["marks"].'",';
-
-		$answerjsondata = json_decode($row["answers"],true);
-
-		$json .= '"yourAnswer":'.'"'.$answerjsondata["answers"][$questionNo]["answer"].'",';
-		$json .= '"correctAnswer":'.'"'.$jsonData["questions"][$questionNo]["answer"].'",';
-		$json .= '"solution":'.'"'.$jsonData["questions"][$questionNo]["solution"].'"';
-
-		$json .='}';
-		}
-		else 
-		{
-			$json ='{"error":"1"}';
-		}
+			$selectquery1 = "select * from ".$examname." where questionNo = ".$questionNo;
+			$result1 = mysqli_query($con,$selectquery1) or die(mysqli_error($con));;
+			while($row1 = mysqli_fetch_array($result1))
+			{
+				$json .='{';
+				$json .= '"questionNo":'.'"'.mysqli_real_escape_string($con,$row1["questionNo"]).'",';
+				$json .= '"question":'.'"'.mysqli_real_escape_string($con,$row1["question"]).'",';
+				$json .= '"optionA":'.'"'.mysqli_real_escape_string($con,$row1["optionA"]).'",';
+				$json .= '"optionB":'.'"'.mysqli_real_escape_string($con,$row1["optionB"]).'",';
+				$json .= '"optionC":'.'"'.mysqli_real_escape_string($con,$row1["optionC"]).'",';
+				$json .= '"optionD":'.'"'.mysqli_real_escape_string($con,$row1["optionD"]).'",';
+				$json .= '"isNumerical":'.'"'.mysqli_real_escape_string($con,$row1["isNumerical"]).'",';
+				$json .= '"isImage":'.'"'.mysqli_real_escape_string($con,$row1["isImage"]).'",';
+				$json .= '"imagePath":'.'"'.mysqli_real_escape_string($con,$row1["imagePath"]).'",';
+				$json .= '"marks":'.'"'.mysqli_real_escape_string($con,$row1["marks"]).'",';
+				
+				$answerjsondata = json_decode($row["answers"],true);
+				
+				$json .= '"yourAnswer":'.'"'.$answerjsondata["answers"][$questionNo]["answer"].'",';
+				$json .= '"correctAnswer":'.'"'.mysqli_real_escape_string($con,$row1["answer"]).'",';
+				$json .= '"solution":'.'"'.mysqli_real_escape_string($con,$row1["solution"]).'"';
+				
+				$json .='}';
+				}
+					
+			}
+			else
+			{
+				$json ='{"error":"1"}';
+			}
+		
 	}
 	else
 	{

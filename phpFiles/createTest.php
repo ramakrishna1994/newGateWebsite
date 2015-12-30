@@ -7,19 +7,20 @@ $_SESSION['examname']=mysqli_real_escape_string($con,$_POST['test']);
 $username=$_SESSION['gateusername'];
 $tableName=$username.".tests";
 
-$selectQuery = "select activationStatus,noOfQuestions,subjectName from `".$tableName."` where testName = ?";
-$stmt = mysqli_prepare($con, $selectQuery);
-mysqli_stmt_bind_param($stmt,"s",$_SESSION['examname']);
-mysqli_stmt_execute($stmt);
-mysqli_stmt_bind_result($stmt, $activationStatus, $noOfQuestions,$subjectName);
+$selectQuery = "select activationStatus,noOfQuestions,subjectName from `".$tableName."` where testName = '".$_SESSION['examname']."'";
+$result = mysqli_query($con,$selectQuery) or die(mysqli_error($con));
 
 
-while(mysqli_stmt_fetch($stmt))
+
+
+
+
+while($row = mysqli_fetch_array($result))
 {
-	if($activationStatus == 1)
+	if($row['activationStatus'] == 1)
 	{
-		$_SESSION['noOfQuestions']=$noOfQuestions;
-		$_SESSION['fullNameOfSubject']=$subjectName;
+		$_SESSION['noOfQuestions']=$row['noOfQuestions'];
+		$_SESSION['fullNameOfSubject']=$row['subjectName'];
 		$updateQuery = "update `".$tableName."` set statusOfExam = 1 where testName = '".$_SESSION['examname']."';";
 		mysqli_query($con,$updateQuery) or die(mysqli_error($con));
 		echo '{"error":"0"}';

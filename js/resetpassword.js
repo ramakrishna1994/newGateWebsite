@@ -107,6 +107,8 @@ function doResetPassword()
 			 {
 		 			$('#statusDivision').html('<font color="green">Your password is changed successfully.</font>');
 			 }
+		 
+		 clearParameters();
 		
 		 },"json");
 	});

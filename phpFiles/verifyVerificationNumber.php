@@ -55,7 +55,7 @@ if($_SESSION['code'] == $verificationnumber)
 		//echo $answerstring;
 		// echo $jsonData["tests"][1]["subjectname"]."1";
 		$insertQuery;
-		for($i = 0;$i<=5;$i++)
+		for($i = 1;$i<=$jsonData["tests"][0]["noOfTests"];$i++)
 		{
 			
 			

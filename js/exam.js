@@ -192,7 +192,7 @@ function endTest()
 	$.when(request).done(function(){
 		
 		
-		window.open("endtestpage.php","_self"); 
+		//window.open("endtestpage.php","_self"); 
         	
 	});
 	

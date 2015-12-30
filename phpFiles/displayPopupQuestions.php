@@ -14,8 +14,8 @@ $result=mysqli_query($con,$selectquery) or die(mysqli_error($con));
 $json="";
 
 
-$str = file_get_contents('../questions/'.$filename.'.json');
-$jsonData = json_decode($str, true);
+//$str = file_get_contents('../questions/'.$filename.'.json');
+//$jsonData = json_decode($str, true);
 
 
 while($row = mysqli_fetch_array($result)){
@@ -29,13 +29,15 @@ while($row = mysqli_fetch_array($result)){
 			$answerjsondata = json_decode($row["answers"],true);
 			
 			
-			
-			for($i=1;$i<=$jsonData["questions"][0]["noOfQuestions"];$i++)
+			$selectquery1 = "select * from ".$subjectname;
+			$result1 = mysqli_query($con,$selectquery1) or die(mysqli_error($con));;
+			$i=0;
+			while($row1 = mysqli_fetch_array($result1))
 			{
-			
+				$i++;
 				$json .='{';
 			
-				if($answerjsondata["answers"][$i]["answer"] == $jsonData["questions"][$i]["answer"])
+				if($answerjsondata["answers"][$i]["answer"] == $row1["answer"])
 				{
 					$json .= '"correct":'.'1';
 			
@@ -47,7 +49,7 @@ while($row = mysqli_fetch_array($result)){
 			
 				$json.='}';
 			
-				if($i!=$jsonData["questions"][0]["noOfQuestions"])
+				if($i!=$row["noOfQuestions"])
 					$json.=',';
 			
 			}

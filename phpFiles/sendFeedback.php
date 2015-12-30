@@ -3,7 +3,7 @@
 
 require_once 'isSessionSet.php';
 require_once 'connection.php';
-require_once '/home/ramakrishna1994/public_html/gate2016/phpmailer/PHPMailerAutoload.php';
+
 
 
 
