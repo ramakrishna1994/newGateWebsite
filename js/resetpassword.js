@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
   
     $('[data-toggle="popover"]').popover();
@@ -105,7 +104,7 @@ function doResetPassword()
 		 	}
 		 else
 			 {
-		 			$('#statusDivision').html('<font color="green">Your password is changed successfully.</font>');
+		 			$('#statusDivision').html('<font color="green">Your password is changed successfully.<br>Please Click on <a type="button" href="home.html" class="btn btn-success btn-xs">Login</a> to proceed</font>');
 			 }
 		 
 		 clearParameters();

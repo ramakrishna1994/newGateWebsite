@@ -38,17 +38,16 @@ $mail->addAddress($to);
 
 $mail->isHTML(true);
 
-$mail->Subject = "GATE WEBSITE FEEDBACK";
+$mail->Subject = "Gate Website Feedback";
 $mail->Body = "
 <html>
 <head>
 </head>
 <body>
-
-<table style='border:1px solid;border-color:black;'>
-<tr>".$emailid."</tr>
-<tr>".$feedback."</tr>
-</table>
+<div style='border:1px solid;border-color:purple;margin:10px;padding:10px'>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Feedback&nbsp;from&nbsp;".$emailid."<br><br><br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><em>".$feedback."</em></b>
+</div>
 </body>
 </html>
 ";

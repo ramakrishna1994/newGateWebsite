@@ -47,19 +47,23 @@ $mail->addAddress($to);
 
 $mail->isHTML(true);
 
-$mail->Subject = "GATE VERIFICATION CODE";
+$mail->Subject = "Gate Verification Code";
 $mail->Body = "
 <html>
 <head>
 </head>
 <body>
-<p>Please enter the below Verification code</p>
-<table style='border:1px solid;border-color:black;'>
-<tr>
-<th>Verifcation Code</th>
-<th>".$random."</th>
-</tr>
-</table>
+
+<div style='border:1px solid;border-color:purple;margin:10px;padding:10px'>
+<b><em>
+Hi,<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome to the GoodCreed Society.Thank you for registering with the Gate test series.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please use the below code to verify your account.<br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Verification Code&nbsp;:&nbsp;<font size='3px'>".$random."</font>
+<br><br>
+Thanks and Regards,<br>
+Saradhi(Founder of GoodCreed).</b></em>
+</div>
 </body>
 </html>
 ";

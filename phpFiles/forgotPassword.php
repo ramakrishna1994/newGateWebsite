@@ -1,10 +1,10 @@
 <?php 
 require_once 'connection.php';
-//require_once '/home/ramakrishna1994/public_html/gate2016/phpmailer/PHPMailerAutoload.php';
+
 
 
 $emailid = mysqli_real_escape_string($con,$_POST['emailid']);
-$selectQuery = "select resetpasswordhash from users where emailid = '".$emailid."';";
+$selectQuery = "select resetpasswordhash,firstname,lastname from users where emailid = '".$emailid."';";
 
 $result = mysqli_query($con,$selectQuery) or die(mysqli_error($con));
 
@@ -18,16 +18,18 @@ else
 	while($row = mysqli_fetch_array($result))
 	{
 		$resetpasswordhash = $row['resetpasswordhash'];
+		$firstname = $row['firstname'];
+		
 	}
        echo '{"error":"0"}';
-       echo 'http://localhost/resetpassword.php?p='.$resetpasswordhash;
-	sendMail($resetpasswordhash,$emailid);
+       //echo 'http://localhost/resetpassword.php?p='.$resetpasswordhash;
+	sendMail($resetpasswordhash,$emailid,$firstname);
 	
 	
 }
 
 
-	function sendMail($password,$emailid)
+	function sendMail($password,$emailid,$firstname)
 	{
 	
 		$mail = new PHPMailer;
@@ -55,17 +57,20 @@ else
 
 		$mail->isHTML(true);
 
-		$mail->Subject = "GATE ACCOUNT PASSWORD";
-		$mail->Body = "<html><body>
-					   <p>Please click on the below link to reset your password</p>
-						<table style='border:1px solid;border-color:black;'>
-						<tr>
-						
-						<th>http://gate2016.goodcreed.in/resetpassword.php?p=".$password."</th>
-						</tr>
-						</table>
-						</body>
-						</html>";
+		$mail->Subject = "Gate Password Reset";
+		$mail->Body = "<html><head></head><body>
+				<div style='border:1px solid;border-color:purple;margin:10px;padding:10px'><font color='black'>
+				<b><em>
+				Hi&nbsp;".$firstname.",<br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please click on the below link to reset your password.<br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://gate2016.goodcreed.in/resetpassword.php?p=".$password."<br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If you are not the recipient of this mail, please ignore it.
+				<br><br>
+				Thanks and Regards,<br>
+				Saradhi(Founder of GoodCreed).</b></em></font>
+				</div>
+				</body>
+				</html>";
 
 
 

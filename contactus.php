@@ -67,6 +67,7 @@ require_once 'phpFiles/isSessionSet.php';
 	</div>	
 	<br>
 	<br>
+	<div class="alert text-center" id="statusDivision"></div>
     <div class="row text-center">
     	<textarea rows="10" cols="60" id="feedback"></textarea><br><br>
    		<button class="btn btn-success" onclick="sendFeedback()">Submit</button>	

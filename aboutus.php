@@ -33,7 +33,7 @@ require_once 'phpFiles/isSessionSet.php';
 				</div>	
 			</div>	
 			<div class="col-sm-4">
-				<center><img src="../profilePictures/<?php echo $_SESSION['gateimage'] ?>" class="img-circle" width="9%" height="7%"><b><font color="blue">  <?php echo $_SESSION['gatefirstname'].' '.$_SESSION['gatelastname'] ?></font></center> 
+				<center><img src="../profilePictures/<?php echo $_SESSION['gateimage'] ?>" class="img-circle" width="9%" height="9%"><b><font color="blue">  <?php echo $_SESSION['gatefirstname'].' '.$_SESSION['gatelastname'] ?></font></center> 
 			</div>
 		</div>
 		<div class="row text-center margin-up">
@@ -57,7 +57,7 @@ require_once 'phpFiles/isSessionSet.php';
 	<div class="container margin-up text-justify">
 	
 		   
-    <div class="col-sm-offset-2 col-sm-2"><img src="images/rk.jpg" class="img img-circle"></div>
+    <div class="col-sm-offset-2 col-sm-2"><img src="images/rk.jpg" class="img img-rounded" height="40%" width="90%"></div>
     	<div class="col-sm-6">Hi. I am <b>Krishna Saradhi</b> , founder of  <i>GOODCREED</i> and designer of 
      this GATE Online Test Series .I am a gate aspirant like you and i have completed my B-tech from <b>JNTUH college of Engineering 
      </b>,Hyderabad in <i>Computer Science and Engineering</i> in 2015.

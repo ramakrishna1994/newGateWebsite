@@ -1,9 +1,8 @@
 
-
 function sendFeedback()
 {
 	
- $('#contactusmessagedivision').html('<img src="images/loader.gif" style="height: 30px;width: 30px;">');
+  $('#statusDivision').html('<img src="images/loader.gif" style="height: 3%;width: 2%;">');
  var feedback = document.getElementById("feedback").value; 
  var emailid = document.getElementById("feedbackemailid").value;
  
@@ -13,7 +12,7 @@ function sendFeedback()
 	 
 	 $.post("phpFiles/sendFeedback.php",{feedback : feedback , emailid :emailid},function(){
 		 
-		   $('#contactusmessagedivision').html('Thanks for giving us your feedback!! We appreciate your time and will get back to you as soon as possible.');
+		   $('#statusDivision').html('<font color="green">Thanks for giving us your feedback!! We appreciate your time and will get back to you as soon as possible.</font>');
 		   document.getElementById("feedback").value = ""; 
 	 });
 	 
@@ -22,7 +21,7 @@ function sendFeedback()
   }
  else
 	 {
-	 $('#contactusmessagedivision').html('Please Enter your feedback.');
+	 $('#statusDivision').html('<font color="red">Please Enter your feedback.</font>');
 	   document.getElementById("feedback").value = "";
 	 }
 
