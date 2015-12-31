@@ -30,6 +30,8 @@ while($row = mysqli_fetch_array($result)){
 		{
 			$json .='{';
 			$json .= '"questionNo":'.'"'.mysqli_real_escape_string($con,$row1["questionNo"]).'",';
+			//echo mysqli_real_escape_string($con,$row1["question"])."\n";
+			//echo $row1["question"];
 			$json .= '"question":'.'"'.mysqli_real_escape_string($con,$row1["question"]).'",';
 			$json .= '"optionA":'.'"'.mysqli_real_escape_string($con,$row1["optionA"]).'",';
 			$json .= '"optionB":'.'"'.mysqli_real_escape_string($con,$row1["optionB"]).'",';

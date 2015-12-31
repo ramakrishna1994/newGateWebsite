@@ -2,87 +2,119 @@
 	"tests":
 	[
 		{
-			"noOfTests":10
-		},
-		{
-			"subjectid":"cd0101",
-			"subjectname":"Compiler Design Chapter 01 Test 01",
-			"activationStatus":"0",
-			"noOfQuestions":10,
-			"timer":"00:10:00",
-			"totalMarks":10
-		},
-		{
-			"subjectid":"toc0101",
-			"subjectname":"Theory Of Computation Chapter 01 Test 01",
-			"activationStatus":"0",
-			"noOfQuestions":15,
-			"timer":"00:10:00",
-			"totalMarks":10
+			"noOfTests":14
 		},
 		{
 			"subjectid":"os0101",
 			"subjectname":"Operating Systems Chapter 01 Test 01",
-			"activationStatus":"0",
-			"noOfQuestions":10,
-			"timer":"00:10:00",
-			"totalMarks":10
+			"activationStatus":"1",
+			"noOfQuestions":18,
+			"timer":"01:30:00",
+			"totalMarks":27
 		},
 		{
 			"subjectid":"os0102",
-			"subjectname":"Operating Systems Chapter 01 Test 01",
-			"activationStatus":"0",
-			"noOfQuestions":10,
-			"timer":"00:10:00",
-			"totalMarks":10
+			"subjectname":"Operating Systems Chapter 01 Test 02",
+			"activationStatus":"1",
+			"noOfQuestions":18,
+			"timer":"01:30:00",
+			"totalMarks":27
 		},
 		{
-			"subjectid":"toc0102",
-			"subjectname":"Theory Of Computation Chapter 01 Test 02",
+			"subjectid":"os0201",
+			"subjectname":"Operating Systems Chapter 02 Test 01",
+			"activationStatus":"1",
+			"noOfQuestions":20,
+			"timer":"01:30:00",
+			"totalMarks":30
+		},
+		{
+			"subjectid":"os0202",
+			"subjectname":"Operating Systems Chapter 02 Test 02",
+			"activationStatus":"1",
+			"noOfQuestions":20,
+			"timer":"01:30:00",
+			"totalMarks":30
+		},
+		{
+			"subjectid":"os0203",
+			"subjectname":"Operating Systems Chapter 02 Test 03",
 			"activationStatus":"1",
 			"noOfQuestions":15,
-			"timer":"00:10:00",
-			"totalMarks":10
+			"timer":"01:00:00",
+			"totalMarks":22
 		},
 		{
-			"subjectid":"toc0103",
-			"subjectname":"Theory Of Computation Chapter 01 Test 03",
+			"subjectid":"os0301",
+			"subjectname":"Operating Systems Chapter 03 Test 01",
 			"activationStatus":"1",
 			"noOfQuestions":15,
-			"timer":"00:10:00",
-			"totalMarks":10
+			"timer":"01:00:00",
+			"totalMarks":22
 		},
 		{
-			"subjectid":"cn0101",
-			"subjectname":"Computer Networks Chapter 01 Test 01",
+			"subjectid":"os0302",
+			"subjectname":"Operating Systems Chapter 03 Test 02",
 			"activationStatus":"1",
-			"noOfQuestions":5,
-			"timer":"00:10:00",
-			"totalMarks":20
-		},
-		{
-			"subjectid":"ds0101",
-			"subjectname":"Data Structures Chapter 01 Test 01",
-			"activationStatus":"0",
-			"noOfQuestions":10,
-			"timer":"00:10:00",
-			"totalMarks":10
+			"noOfQuestions":14,
+			"timer":"01:00:00",
+			"totalMarks":21
 		},
 		{
 			"subjectid":"dbms0101",
 			"subjectname":"Database Management Systems Chapter 01 Test 01",
-			"activationStatus":"0",
-			"noOfQuestions":5,
-			"timer":"00:10:00",
-			"totalMarks":10
+			"activationStatus":"1",
+			"noOfQuestions":16,
+			"timer":"01:30:00",
+			"totalMarks":24
 		},
 		{
-			"subjectid":"grandtest01",
-			"subjectname":"Gate Grand Test 01",
-			"activationStatus":"0",
-			"noOfQuestions":30,
-			"timer":"00:30:00",
-			"totalMarks":40
+			"subjectid":"dbms0201",
+			"subjectname":"Database Management Systems Chapter 02 Test 01",
+			"activationStatus":"1",
+			"noOfQuestions":18,
+			"timer":"01:30:00",
+			"totalMarks":27
+		},
+		{
+			"subjectid":"dbms0202",
+			"subjectname":"Database Management Systems Chapter 02 Test 02",
+			"activationStatus":"1",
+			"noOfQuestions":17,
+			"timer":"01:30:00",
+			"totalMarks":26
+		},
+		{
+			"subjectid":"dbms0301",
+			"subjectname":"Database Management Systems Chapter 03 Test 01",
+			"activationStatus":"1",
+			"noOfQuestions":16,
+			"timer":"01:30:00",
+			"totalMarks":24
+		},
+		{
+			"subjectid":"dbms0302",
+			"subjectname":"Database Management Systems Chapter 03 Test 02",
+			"activationStatus":"1",
+			"noOfQuestions":16,
+			"timer":"01:30:00",
+			"totalMarks":24
+		},
+		{
+			"subjectid":"dbms0401",
+			"subjectname":"Database Management Systems Chapter 04 Test 01",
+			"activationStatus":"1",
+			"noOfQuestions":13,
+			"timer":"01:30:00",
+			"totalMarks":20
+		},
+		{
+			"subjectid":"dbms0501",
+			"subjectname":"Database Management Systems Chapter 05 Test 01",
+			"activationStatus":"1",
+			"noOfQuestions":8,
+			"timer":"01:00:00",
+			"totalMarks":12
 		}
 	]
 }
